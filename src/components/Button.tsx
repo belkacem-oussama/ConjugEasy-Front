@@ -2,13 +2,12 @@ import React from 'react'
 import '../assets/styles/components/button.scss'
 
 type Props = React.ComponentProps<'button'> & {
-    color?: 'primary' | 'secondary'
-    size: 'small' | 'medium' | 'large'
+    color: 'primary' | 'secondary'
 }
 
-const Button: React.FC<Props> = ({ color, size, children }) => {
+const Button: React.FC<Props> = ({ color, children }) => {
     const getButtonStyle = () => {
-        let styles = ''
+        let styles = 'size_button '
 
         switch (color) {
             case 'primary':
@@ -20,25 +19,16 @@ const Button: React.FC<Props> = ({ color, size, children }) => {
             default:
                 break
         }
-
-        switch (size) {
-            case 'small':
-                styles += 'small_button '
-                break
-            case 'medium':
-                styles += 'medium_button '
-                break
-            case 'large':
-                styles += 'large_button '
-                break
-            default:
-                break
-        }
+        console.log(styles)
 
         return styles
     }
 
-    return <button className={`${getButtonStyle()}`}>{children}</button>
+    return (
+        <button className={`${getButtonStyle()}`} id="button-component">
+            {children}
+        </button>
+    )
 }
 
 export default Button

@@ -9,17 +9,13 @@ import '.././assets/styles/pages/home.scss'
 export default function Home() {
     const firstTwoButtonsText: String[] = ['Élève', 'Professeur']
     const firstTwoButtons = firstTwoButtonsText.map((label, index) => (
-        <Button key={index} size="small" color="primary">
+        <Button key={index} color="primary">
             {label}
         </Button>
     ))
 
     const thirdButtonText = 'Visiteur'
-    const thirdButton = (
-        <Button size="small" color="primary">
-            {thirdButtonText}
-        </Button>
-    )
+    const thirdButton = <Button color="primary">{thirdButtonText}</Button>
 
     return (
         <div className="home">
