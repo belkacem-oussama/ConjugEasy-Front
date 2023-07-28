@@ -1,6 +1,11 @@
 import './assets/styles/main.scss'
 import Home from './pages/Home.tsx'
+import { Route, Routes } from 'react-router-dom'
 
 export default function App() {
-    return <Home />
+    return (
+        <Routes>
+            <Route path="/" element={<Home />} />
+        </Routes>
+    )
 }
