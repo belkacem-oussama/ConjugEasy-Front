@@ -19,7 +19,6 @@ const Button: React.FC<Props> = ({ color, children }) => {
             default:
                 break
         }
-        console.log(styles)
 
         return styles
     }
