@@ -22,8 +22,10 @@ export default function Home() {
             <img src={ConjugEasyTitle} alt="ConjugEasy Title" />
             <div className="home-buttons">
                 <img src={ConjugEasyNotes} alt="ConjugEasy Notes" />
-                <div className="home-buttons-top">{firstTwoButtons}</div>
-                <div className="home-buttons-bottom">{thirdButton}</div>
+                <div className="home-buttons-container">
+                    <div className="home-buttons-top">{firstTwoButtons}</div>
+                    <div className="home-buttons-bottom">{thirdButton}</div>
+                </div>
             </div>
             <img src={ConjugEasyBag} alt="ConjugEasy Bag" />
         </div>
