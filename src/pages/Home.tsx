@@ -2,7 +2,6 @@ import Button from '../components/Button.tsx'
 
 import ConjugEasyTitle from '.././assets/images/ConjugEasy.png'
 import ConjugEasyNotes from '.././assets/images/ConjugEasy_Notes.png'
-import ConjugEasyBag from '.././assets/images/ConjugEasy_Bag.png'
 
 import '.././assets/styles/pages/home.scss'
 
@@ -19,7 +18,7 @@ export default function Home() {
 
     return (
         <div className="home">
-            <img src={ConjugEasyTitle} alt="ConjugEasy Title" />
+            <img src={ConjugEasyTitle} alt="ConjugEasy Title" id="title" />
             <div className="home-buttons">
                 <img src={ConjugEasyNotes} alt="ConjugEasy Notes" />
                 <div className="home-buttons-container">
@@ -27,7 +26,6 @@ export default function Home() {
                     <div className="home-buttons-bottom">{thirdButton}</div>
                 </div>
             </div>
-            <img src={ConjugEasyBag} alt="ConjugEasy Bag" />
         </div>
     )
 }
