@@ -7,6 +7,9 @@
     @media (min-width: 769px) and (max-width: 1440px) {
         margin: 15px;
     }
+    @media (min-width: 1440px) {
+        margin: 20px;
+    }
 }
 
 .primary_button {
@@ -48,6 +51,12 @@
     }
 
     @media (min-width: 769px) and (max-width: 1440px) {
+        width: 300px;
+        height: 90px;
+        border-radius: 100px;
+        font-size: 30px;
+    }
+    @media (min-width: 1440px) {
         width: 300px;
         height: 90px;
         border-radius: 100px;
