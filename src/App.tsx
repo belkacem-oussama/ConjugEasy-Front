@@ -1,11 +1,16 @@
 import './assets/styles/main.scss'
 import Home from './pages/Home.tsx'
+import Footer from './layouts/Footer.tsx'
 import { Route, Routes } from 'react-router-dom'
+import React from 'react'
 
 export default function App() {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-        </Routes>
+        <React.Fragment>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+            <Footer />
+        </React.Fragment>
     )
 }
