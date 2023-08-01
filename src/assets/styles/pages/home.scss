@@ -32,6 +32,9 @@
             margin-top: 100px;
         }
         &-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: start;
             @media (max-width: 768px) {
                 width: 100%;
                 margin-bottom: 20px;
@@ -45,7 +48,7 @@
             }
             img {
                 @media (max-width: 768px) {
-                    width: 100%;
+                    width: 300px;
                 }
 
                 @media (min-width: 769px) and (max-width: 1440px) {
