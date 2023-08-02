@@ -1,22 +1,22 @@
 import { useState } from 'react'
+
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
+import '../assets/styles/components/input.scss'
+
 interface InputProps {
-    isUser: string
+    isUser?: string
 }
 
 export default function Input({ isUser }: InputProps) {
-    const [userValue, setUserValue] = useState<string>(isUser)
+    const [userValue, setUserValue] = useState<string>(isUser || '')
 
     return (
         <>
-            <InputGroup className="mb-3">
-                {isUser === 'Identifiant' && (
-                    <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                )}
+            <InputGroup className="input-component">
                 <Form.Control
-                    placeholder={isUser}
+                    type="text"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                     value={userValue}
