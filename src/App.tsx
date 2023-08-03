@@ -3,6 +3,7 @@ import React from 'react'
 
 import Home from './pages/Home.tsx'
 import Footer from './layouts/Footer.tsx'
+import Header from './layouts/Header.tsx'
 
 import './assets/styles/main.scss'
 import Login from './pages/Login.tsx'
@@ -10,6 +11,7 @@ import Login from './pages/Login.tsx'
 export default function App() {
     return (
         <React.Fragment>
+            <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
