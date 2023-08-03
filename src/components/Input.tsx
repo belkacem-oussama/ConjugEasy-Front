@@ -15,10 +15,11 @@ export default function Input({ isPassword }: InputProps) {
 
     return (
         <>
+            {isPassword ? 'Mot de passe' : 'Identifiant'}
             <InputGroup className="input-component">
                 <Form.Control
                     type={isPassword ? 'password' : 'text'}
-                    placeholder={isPassword ? 'Mot de passe' : 'Identifiant'}
+                    placeholder={isPassword ? 'Password' : 'Username'}
                     value={isPassword ? passwordValue : inputValue}
                     onChange={(e) =>
                         isPassword
