@@ -13,7 +13,9 @@ export default function App() {
 
     return (
         <React.Fragment>
-            {location.pathname !== '/' && <Header />}
+            {location.pathname !== '/' && location.pathname !== '/login' && (
+                <Header />
+            )}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
