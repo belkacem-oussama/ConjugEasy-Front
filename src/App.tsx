@@ -10,7 +10,6 @@ import Login from './pages/Login.tsx'
 
 export default function App() {
     const location = useLocation()
-    console.log(location)
 
     return (
         <React.Fragment>
