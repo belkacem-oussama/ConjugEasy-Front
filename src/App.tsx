@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import React from 'react'
 
 import Home from './pages/Home.tsx'
@@ -9,9 +9,12 @@ import './assets/styles/main.scss'
 import Login from './pages/Login.tsx'
 
 export default function App() {
+    const location = useLocation()
+    console.log(location)
+
     return (
         <React.Fragment>
-            <Header />
+            {location.pathname !== '/' && <Header />}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
