@@ -5,6 +5,7 @@ export default function Square() {
     return (
         <div className="square-component">
             <Input />
+            <Input isPassword />
         </div>
     )
 }
