@@ -1,4 +1,5 @@
 import Button from '../components/Button.tsx'
+import { Link } from 'react-router-dom'
 
 import ConjugEasyTitle from '.././assets/images/ConjugEasy.png'
 import ConjugEasyCahier from '.././assets/images/ConjugEasy_Cahier.png'
@@ -22,7 +23,11 @@ export default function Home() {
                     <img src={ConjugEasyCahier} alt="ConjugEasy Notes" />
                 </div>
                 <div className="home-buttons-container">
-                    <div className="home-buttons-top">{firstTwoButtons}</div>
+                    <Link to="/login">
+                        <div className="home-buttons-top">
+                            {firstTwoButtons}
+                        </div>
+                    </Link>
                     <div className="home-buttons-bottom">{thirdButton}</div>
                 </div>
             </div>
