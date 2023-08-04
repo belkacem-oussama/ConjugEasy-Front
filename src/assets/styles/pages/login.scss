@@ -1,0 +1,30 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-page {
+        margin-top: 50px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #login-container-page-image {
+        @media (max-width: 768px) {
+            width: 300px;
+        }
+
+        @media (min-width: 769px) and (max-width: 1440px) {
+            width: 400px;
+            height: 170px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 500px;
+            height: 200px;
+        }
+    }
+}
