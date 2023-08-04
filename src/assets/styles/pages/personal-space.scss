@@ -1,0 +1,42 @@
+.personal-space-container {
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        height: 500px;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1440px) {
+        width: 400px;
+        height: 170px;
+    }
+
+    @media (min-width: 1440px) {
+        width: 500px;
+        height: 200px;
+    }
+    &-main {
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1440px) {
+            width: 400px;
+            height: 170px;
+        }
+
+        @media (min-width: 1440px) {
+            width: 500px;
+            height: 200px;
+        }
+    }
+}
