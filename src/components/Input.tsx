@@ -13,6 +13,17 @@ export default function Input({ isPassword }: InputProps) {
     const [inputValue, setInputValue] = useState<string>('')
     const [passwordValue, setPasswordValue] = useState<string>('')
 
+    const HandleChangeInput = (e: any) => {
+        isPassword
+            ? setPasswordValue(e.target.value)
+            : setInputValue(e.target.value)
+        if (isPassword) {
+            localStorage.setItem('password', e.target.value)
+        } else {
+            localStorage.setItem('username', e.target.value)
+        }
+    }
+
     return (
         <>
             {isPassword ? 'Mot de passe' : 'Identifiant'}
@@ -21,11 +32,7 @@ export default function Input({ isPassword }: InputProps) {
                     type={isPassword ? 'password' : 'text'}
                     placeholder={isPassword ? 'Password' : 'Username'}
                     value={isPassword ? passwordValue : inputValue}
-                    onChange={(e) =>
-                        isPassword
-                            ? setPasswordValue(e.target.value)
-                            : setInputValue(e.target.value)
-                    }
+                    onChange={HandleChangeInput}
                 />
             </InputGroup>
         </>
