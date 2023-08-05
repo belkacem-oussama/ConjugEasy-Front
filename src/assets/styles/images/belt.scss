@@ -1,0 +1,11 @@
+#belt {
+    @media (max-width: 768px) {
+        width: 150px;
+    }
+    @media (min-width: 769px) and (max-width: 1440px) {
+        width: 200px;
+    }
+    @media (min-width: 1441px) {
+        width: 400px;
+    }
+}

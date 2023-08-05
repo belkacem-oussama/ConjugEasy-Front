@@ -1,5 +1,7 @@
 import Button from '../components/Button.tsx'
+import ConjugEasyBrownBelt from '../assets/images/belts/ConjugEasy_BrownBelt.png'
 import '../assets/styles/pages/personal-space.scss'
+import '../assets/styles/images/belt.scss'
 
 export default function PersonalSpace() {
     const textButton = [
@@ -11,10 +13,16 @@ export default function PersonalSpace() {
     return (
         <div className="personal-space-container">
             <p>Salut Amel ! Alors, que veux-tu faire aujourd'hui ? </p>
+            <p>Ceinture actuelle :</p>
+            <img src={ConjugEasyBrownBelt} id="belt" />
             <div className="personal-space-container-main">
-                <Button color="primary" text={textButton[0]} />
-                <Button color="primary" text={textButton[1]} />
-                <Button color="primary" text={textButton[2]} />
+                <div className="personal-space-container-main-top">
+                    <Button color="primary" text={textButton[0]} />
+                    <Button color="primary" text={textButton[1]} />
+                </div>
+                <div className="personal-space-container-main-bottom">
+                    <Button color="primary" text={textButton[2]} />
+                </div>
             </div>
         </div>
     )
