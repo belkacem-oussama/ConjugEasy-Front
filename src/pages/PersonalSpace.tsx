@@ -1,5 +1,6 @@
 import Button from '../components/Button.tsx'
 import ConjugEasyBrownBelt from '../assets/images/belts/ConjugEasy_BrownBelt.png'
+import { Link } from 'react-router-dom'
 import '../assets/styles/pages/personal-space.scss'
 import '../assets/styles/images/belt.scss'
 
@@ -17,7 +18,9 @@ export default function PersonalSpace() {
             <img src={ConjugEasyBrownBelt} id="belt" />
             <div className="personal-space-container-main">
                 <div className="personal-space-container-main-top">
-                    <Button color="primary" text={textButton[0]} />
+                    <Link to="/sequence">
+                        <Button color="primary" text={textButton[0]}></Button>
+                    </Link>
                     <Button color="primary" text={textButton[1]} />
                 </div>
                 <div className="personal-space-container-main-bottom">
