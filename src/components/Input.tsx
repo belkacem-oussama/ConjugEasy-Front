@@ -24,6 +24,10 @@ export default function Input({ isPassword }: InputProps) {
         }
     }
 
+    const HandleSubmitInput = () => {
+        console.log('ok')
+    }
+
     return (
         <>
             {isPassword ? 'Mot de passe' : 'Identifiant'}
@@ -33,6 +37,7 @@ export default function Input({ isPassword }: InputProps) {
                     placeholder={isPassword ? 'Password' : 'Username'}
                     value={isPassword ? passwordValue : inputValue}
                     onChange={HandleChangeInput}
+                    onSubmit={HandleSubmitInput}
                 />
             </InputGroup>
         </>
