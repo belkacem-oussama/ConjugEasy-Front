@@ -9,6 +9,7 @@ import './assets/styles/main.scss'
 import Login from './pages/Login.tsx'
 import PersonalSpace from './pages/PersonalSpace.tsx'
 import Start from './pages/Start.tsx'
+import Sequence from './pages/Sequence.tsx'
 
 export default function App() {
     const location = useLocation()
@@ -23,6 +24,7 @@ export default function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/personal" element={<PersonalSpace />} />
                 <Route path="/start" element={<Start />} />
+                <Route path="/sequence" element={<Sequence />} />
             </Routes>
             <Footer />
         </React.Fragment>
