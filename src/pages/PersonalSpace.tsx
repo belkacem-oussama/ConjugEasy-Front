@@ -18,7 +18,7 @@ export default function PersonalSpace() {
             <img src={ConjugEasyBrownBelt} id="belt" />
             <div className="personal-space-container-main">
                 <div className="personal-space-container-main-top">
-                    <Link to="/sequence">
+                    <Link to="/start">
                         <Button color="primary" text={textButton[0]}></Button>
                     </Link>
                     <Button color="primary" text={textButton[1]} />
