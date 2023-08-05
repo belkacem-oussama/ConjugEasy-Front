@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import Input from './Input.tsx'
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import Button from './Button.tsx'
@@ -17,7 +17,13 @@ export default function Square() {
                     />
                     <Input />
                     <Input isPassword />
-                    <Button color="secondary" text="Connexion" size="small" />
+                    <Link to="/personal">
+                        <Button
+                            color="secondary"
+                            text="Connexion"
+                            size="small"
+                        />
+                    </Link>
                 </>
             ) : null}
         </div>
