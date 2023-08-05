@@ -7,6 +7,7 @@ import Header from './layouts/Header.tsx'
 
 import './assets/styles/main.scss'
 import Login from './pages/Login.tsx'
+import PersonalSpace from './pages/PersonalSpace.tsx'
 
 export default function App() {
     const location = useLocation()
@@ -19,6 +20,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/personal" element={<PersonalSpace />} />
             </Routes>
             <Footer />
         </React.Fragment>
