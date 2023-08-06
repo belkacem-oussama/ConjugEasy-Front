@@ -16,11 +16,33 @@
 
     @media (max-width: 768px) {
         width: 250px;
+        padding: 20px;
     }
     @media (min-width: 769px) and (max-width: 1440px) {
         width: 400px;
+        padding: 20px;
     }
     @media (min-width: 1440px) {
         width: 650px;
+    }
+}
+
+.square-tablet-sequence {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $button-primary-color;
+    border-radius: $border-radius-square;
+
+    @media (max-width: 768px) {
+        width: 260px;
+        height: 280px;
+        padding: 10px;
+    }
+
+    @media (min-width: 768px) {
+        width: 700px;
+        height: 200px;
+        padding: 20px;
     }
 }

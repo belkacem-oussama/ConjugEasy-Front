@@ -1,4 +1,5 @@
 import { useLocation, Link } from 'react-router-dom'
+import text from '../assets/json/text.json'
 import Input from './Input.tsx'
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import Button from './Button.tsx'
@@ -7,9 +8,9 @@ import '../assets/styles/components/square.scss'
 export default function Square() {
     const location = useLocation()
     return (
-        <div className="square-component">
+        <>
             {location.pathname === '/login' ? (
-                <>
+                <div className="square-component">
                     <img
                         src={ConjugEasyLogo}
                         id="login-logo"
@@ -24,17 +25,17 @@ export default function Square() {
                             size="small"
                         />
                     </Link>
-                </>
+                </div>
             ) : (
                 ''
             )}
             {location.pathname === '/sequence' ? (
-                <>
-                    <p>Sequence</p>
-                </>
+                <div className="square-tablet-sequence">
+                    <p>{text.text}</p>
+                </div>
             ) : (
                 ''
             )}
-        </div>
+        </>
     )
 }
