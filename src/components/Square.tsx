@@ -25,7 +25,16 @@ export default function Square() {
                         />
                     </Link>
                 </>
-            ) : null}
+            ) : (
+                ''
+            )}
+            {location.pathname === '/sequence' ? (
+                <>
+                    <p>Sequence</p>
+                </>
+            ) : (
+                ''
+            )}
         </div>
     )
 }
