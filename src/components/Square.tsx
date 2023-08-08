@@ -39,7 +39,7 @@ export default function Square() {
             {location.pathname === '/result' ? (
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
-                    <h2>3/5</h2>
+                    <h1>3/5</h1>
                     <p>{text.score}</p>
                 </div>
             ) : (

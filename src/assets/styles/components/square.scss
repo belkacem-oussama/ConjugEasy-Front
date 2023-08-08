@@ -59,11 +59,25 @@
         width: 260px;
         height: 280px;
         padding: 10px;
+        h1 {
+            font-size: 50px;
+        }
+        p {
+            font-size: 17px;
+            text-align: center;
+        }
     }
 
     @media (min-width: 768px) {
         width: 700px;
         height: 200px;
         padding: 20px;
+        h1 {
+            font-size: 50px;
+        }
+        p {
+            font-size: 20px;
+            text-align: center;
+        }
     }
 }
