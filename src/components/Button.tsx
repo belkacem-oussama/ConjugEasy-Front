@@ -1,4 +1,4 @@
-import React from 'react'
+import { useLocation } from 'react-router-dom'
 import '../assets/styles/components/button.scss'
 
 type Props = React.ComponentProps<'button'> & {
@@ -8,6 +8,7 @@ type Props = React.ComponentProps<'button'> & {
 }
 
 const Button: React.FC<Props> = ({ color, text, size }) => {
+    const location = useLocation()
     const getButtonStyle = () => {
         let styles = 'size_button '
 
@@ -29,6 +30,8 @@ const Button: React.FC<Props> = ({ color, text, size }) => {
             default:
                 break
         }
+
+        location.pathname === '/result' ? (styles += 'button-result') : ''
 
         return styles
     }
