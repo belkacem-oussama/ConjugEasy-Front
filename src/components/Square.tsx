@@ -30,14 +30,18 @@ export default function Square() {
                 ''
             )}
             {location.pathname === '/sequence' ? (
-                <div className="square-tablet">
+                <div className="square-tablet-sequence">
                     <p>{text.text}</p>
                 </div>
             ) : (
                 ''
             )}
             {location.pathname === '/result' ? (
-                <div className="square-tablet"></div>
+                <div className="square-tablet-result">
+                    <h1>Score :</h1>
+                    <h2>3/5</h2>
+                    <p>{text.score}</p>
+                </div>
             ) : (
                 ''
             )}
