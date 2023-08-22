@@ -1,9 +1,9 @@
 import { useLocation, Link } from 'react-router-dom'
-import text from '../assets/json/text.json'
 import Input from './Input.tsx'
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import Button from './Button.tsx'
 import '../assets/styles/components/square.scss'
+import Text from './Text.tsx'
 
 export default function Square() {
     const location = useLocation()
@@ -31,7 +31,9 @@ export default function Square() {
             )}
             {location.pathname === '/sequence' ? (
                 <div className="square-tablet-sequence">
-                    <p>{text.text}</p>
+                    <p>
+                        <Text />
+                    </p>
                 </div>
             ) : (
                 ''
