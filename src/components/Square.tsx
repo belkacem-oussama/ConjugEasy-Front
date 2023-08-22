@@ -1,5 +1,4 @@
 import { useLocation, Link } from 'react-router-dom'
-import text from '../assets/json/text.json'
 import Input from './Input.tsx'
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import Button from './Button.tsx'

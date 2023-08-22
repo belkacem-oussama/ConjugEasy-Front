@@ -1,10 +1,5 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import text from '../assets/json/text.json'
-
-type TextData = {
-    text: string
-    words: string[]
-}
 
 export default function Text() {
     const [replacedWords, setReplacedWords] = useState<{
