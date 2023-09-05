@@ -31,9 +31,7 @@ export default function Square() {
             )}
             {location.pathname === '/sequence' ? (
                 <div className="square-tablet-sequence">
-                    <p>
-                        <Text />
-                    </p>
+                    <Text />
                 </div>
             ) : (
                 ''
