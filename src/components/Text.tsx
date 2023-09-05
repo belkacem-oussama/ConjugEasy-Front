@@ -7,10 +7,7 @@ export default function Text() {
     }>({})
 
     const handleVerbReplace = (verb: string) => {
-        setReplacedWords((prevReplacedWords) => ({
-            ...prevReplacedWords,
-            [verb]: true,
-        }))
+        console.log(replacedWords)
     }
 
     const wordsToReplace = text.words.filter((word) => text.text.includes(word))
@@ -27,7 +24,11 @@ export default function Text() {
                 </span>
             )
         } else {
-            return <span key={index}>{word} </span>
+            return (
+                <span key={index} className="text">
+                    {word}{' '}
+                </span>
+            )
         }
     })
 
