@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
@@ -12,6 +13,7 @@ interface InputProps {
 export default function Input({ isPassword }: InputProps) {
     const [inputValue, setInputValue] = useState<string>('')
     const [passwordValue, setPasswordValue] = useState<string>('')
+    const location = useLocation()
 
     const HandleChangeInput = (e: any) => {
         isPassword
@@ -26,15 +28,21 @@ export default function Input({ isPassword }: InputProps) {
 
     return (
         <>
-            {isPassword ? 'Mot de passe' : 'Identifiant'}
-            <InputGroup className="input-component">
-                <Form.Control
-                    type={isPassword ? 'password' : 'text'}
-                    placeholder={isPassword ? 'Password' : 'Username'}
-                    value={isPassword ? passwordValue : inputValue}
-                    onChange={HandleChangeInput}
-                />
-            </InputGroup>
+            {location.pathname === '/login' ? (
+                <>
+                    {isPassword ? 'Mot de passe' : 'Identifiant'}
+                    <InputGroup className="input-component">
+                        <Form.Control
+                            type={isPassword ? 'password' : 'text'}
+                            placeholder={isPassword ? 'Password' : 'Username'}
+                            value={isPassword ? passwordValue : inputValue}
+                            onChange={HandleChangeInput}
+                        />
+                    </InputGroup>
+                </>
+            ) : (
+                ''
+            )}
         </>
     )
 }
