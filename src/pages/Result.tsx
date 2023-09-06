@@ -4,6 +4,7 @@ import Button from '../components/Button.tsx'
 import Square from '../components/Square.tsx'
 import { useState } from 'react'
 import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
+import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
 
 export default function Result() {
     const [readyForTest, setReadyForTest] = useState(false)
@@ -33,6 +34,7 @@ export default function Result() {
                         <Button
                             color="primary"
                             text="Retour à l'espace perso"
+                            img={ConjugEasyHome}
                         />
                     </Link>
                 )}
