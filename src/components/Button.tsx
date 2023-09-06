@@ -1,13 +1,16 @@
 import { useLocation } from 'react-router-dom'
+
 import '../assets/styles/components/button.scss'
+import '../assets/styles/images/logo.scss'
 
 type Props = React.ComponentProps<'button'> & {
     color: 'primary' | 'secondary'
     text?: string
     size?: string
+    img?: string
 }
 
-const Button: React.FC<Props> = ({ color, text, size }) => {
+const Button: React.FC<Props> = ({ color, text, size, img }) => {
     const location = useLocation()
     const getButtonStyle = () => {
         let styles = 'size_button '
@@ -39,6 +42,7 @@ const Button: React.FC<Props> = ({ color, text, size }) => {
     return (
         <button className={`${getButtonStyle()}`} id="button-component">
             {text}
+            {img ? <img src={img} id="logo"></img> : ''}
         </button>
     )
 }

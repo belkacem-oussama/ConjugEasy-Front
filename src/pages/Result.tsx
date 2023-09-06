@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom'
-import '../assets/styles/pages/result.scss'
+import { useState } from 'react'
+
 import Button from '../components/Button.tsx'
 import Square from '../components/Square.tsx'
-<<<<<<< HEAD
-import { useState } from 'react'
+
+import '../assets/styles/pages/result.scss'
+import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
+import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
 
 export default function Result() {
     const [readyForTest, setReadyForTest] = useState(false)
 
-=======
-
-export default function Result() {
->>>>>>> f46f61e (add styles for result page & button component)
     return (
         <div className="result-container">
             <div className="result-container-page">
@@ -19,9 +18,12 @@ export default function Result() {
             </div>
             <div className="result-container-button">
                 <Link to="/train">
-                    <Button color="primary" text="Je m'exerce !" />
+                    <Button
+                        color="primary"
+                        text="Je m'exerce !"
+                        img={ConjugEasyExercice}
+                    />
                 </Link>
-<<<<<<< HEAD
                 {readyForTest ? (
                     <Link to="/test">
                         <Button
@@ -34,14 +36,10 @@ export default function Result() {
                         <Button
                             color="primary"
                             text="Retour à l'espace perso"
+                            img={ConjugEasyHome}
                         />
                     </Link>
                 )}
-=======
-                <Link to="/personal">
-                    <Button color="primary" text="Retour à l'espace perso" />
-                </Link>
->>>>>>> f46f61e (add styles for result page & button component)
             </div>
         </div>
     )

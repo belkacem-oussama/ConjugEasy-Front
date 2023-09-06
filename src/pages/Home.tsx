@@ -1,5 +1,6 @@
-import Button from '../components/Button.tsx'
 import { Link } from 'react-router-dom'
+
+import Button from '../components/Button.tsx'
 
 import ConjugEasyTitle from '.././assets/images/ConjugEasy.png'
 import ConjugEasyCahier from '.././assets/images/ConjugEasy_Cahier.png'

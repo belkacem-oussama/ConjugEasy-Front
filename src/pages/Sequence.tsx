@@ -1,7 +1,9 @@
-import Square from '../components/Square.tsx'
-import '../assets/styles/pages/sequence.scss'
-import Button from '../components/Button.tsx'
 import { Link } from 'react-router-dom'
+
+import Square from '../components/Square.tsx'
+import Button from '../components/Button.tsx'
+
+import '../assets/styles/pages/sequence.scss'
 
 export default function Sequence() {
     return (

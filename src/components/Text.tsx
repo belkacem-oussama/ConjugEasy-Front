@@ -1,5 +1,6 @@
-import text from '../assets/json/text.json'
 import Input from './Input.tsx'
+
+import text from '../assets/json/text.json'
 import '../assets/styles/components/text.scss'
 
 export default function Text() {
@@ -16,6 +17,6 @@ export default function Text() {
             return <span key={index}>{word} </span>
         }
     })
-    
+
     return <div className="text-display">{displayText}</div>
 }
