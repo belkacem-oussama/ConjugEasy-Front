@@ -4,6 +4,7 @@ import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import Button from './Button.tsx'
 import '../assets/styles/components/square.scss'
 import Text from './Text.tsx'
+import text from '../assets/json/text.json'
 
 export default function Square() {
     const location = useLocation()
@@ -39,15 +40,11 @@ export default function Square() {
                 ''
             )}
             {location.pathname === '/result' ? (
-<<<<<<< HEAD
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
-                    <h1>3/5</h1>
+                    <h2>3/5</h2>
                     <p>{text.score}</p>
                 </div>
-=======
-                <div className="square-tablet"></div>
->>>>>>> f46f61e (add styles for result page & button component)
             ) : (
                 ''
             )}
