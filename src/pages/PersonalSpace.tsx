@@ -16,6 +16,8 @@ export default function PersonalSpace() {
         "Je m'exerce",
     ]
 
+    const beltOrder: string[] = ['white', 'blue', 'purple', 'brown', 'black']
+
     return (
         <div className="personal-space-container">
             <p>Salut Amel ! Alors, que veux-tu faire aujourd'hui ? </p>
