@@ -45,3 +45,24 @@
         padding: 20px;
     }
 }
+
+.square-tablet-result {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: $button-primary-color;
+    border-radius: $border-radius-square;
+
+    @media (max-width: 768px) {
+        width: 260px;
+        height: 280px;
+        padding: 10px;
+    }
+
+    @media (min-width: 768px) {
+        width: 700px;
+        height: 200px;
+        padding: 20px;
+    }
+}

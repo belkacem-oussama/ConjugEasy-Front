@@ -1,6 +1,7 @@
 import Square from '../components/Square.tsx'
 import '../assets/styles/pages/sequence.scss'
 import Button from '../components/Button.tsx'
+import { Link } from 'react-router-dom'
 
 export default function Sequence() {
     return (
@@ -8,7 +9,9 @@ export default function Sequence() {
             <div className="sequence-container-page">
                 <Square />
             </div>
-            <Button color="primary" text="J'ai fini !" />
+            <Link to="/result">
+                <Button color="primary" text="J'ai fini !" />
+            </Link>
         </div>
     )
 }
