@@ -11,6 +11,7 @@ import Sequence from './pages/Sequence.tsx'
 import Result from './pages/Result.tsx'
 
 import './assets/styles/main.scss'
+import Board from './pages/Board.tsx'
 
 export default function App() {
     const location = useLocation()
@@ -27,6 +28,7 @@ export default function App() {
                 <Route path="/start" element={<Start />} />
                 <Route path="/sequence" element={<Sequence />} />
                 <Route path="/result" element={<Result />} />
+                <Route path="/board" element={<Board />} />
             </Routes>
             <Footer />
         </React.Fragment>
