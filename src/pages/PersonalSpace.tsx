@@ -5,7 +5,7 @@ import '../assets/styles/pages/personal-space.scss'
 import '../assets/styles/images/belt.scss'
 
 export default function PersonalSpace() {
-    const textButton = [
+    const textButton: string[] = [
         'Je passe la ceinture noire',
         'Je consulte mes résultats',
         "Je m'exerce",
