@@ -2,17 +2,20 @@
 
 //STYLE FOR LOGIN-PAGE
 .input-component-login {
+    border: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: $border-radius-input;
+    color: black;
+
     input {
         border: none;
-        text-align: center;
-        padding: 7px;
         border-radius: $border-radius-input;
+        padding: 0;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
         outline: none;
-
-        @media (max-width: 768px) {
-            width: 80px;
-            height: 1.5em;
-        }
     }
 }
 
