@@ -35,8 +35,11 @@
 
     &-button {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+        }
     }
 }
