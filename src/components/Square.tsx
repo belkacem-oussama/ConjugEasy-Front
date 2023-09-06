@@ -39,11 +39,15 @@ export default function Square() {
                 ''
             )}
             {location.pathname === '/result' ? (
+<<<<<<< HEAD
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
                     <h1>3/5</h1>
                     <p>{text.score}</p>
                 </div>
+=======
+                <div className="square-tablet"></div>
+>>>>>>> f46f61e (add styles for result page & button component)
             ) : (
                 ''
             )}
