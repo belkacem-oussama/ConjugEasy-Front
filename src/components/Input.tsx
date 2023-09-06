@@ -8,9 +8,10 @@ import '../assets/styles/components/input.scss'
 
 interface InputProps {
     isPassword?: boolean
+    placeholderValue?: string
 }
 
-export default function Input({ isPassword }: InputProps) {
+export default function Input({ isPassword, placeholderValue }: InputProps) {
     const [inputValue, setInputValue] = useState<string>('')
     const [passwordValue, setPasswordValue] = useState<string>('')
     const location = useLocation()
@@ -19,10 +20,11 @@ export default function Input({ isPassword }: InputProps) {
         isPassword
             ? setPasswordValue(e.target.value)
             : setInputValue(e.target.value)
+
         if (isPassword) {
             localStorage.setItem('password', e.target.value)
         } else {
-            localStorage.setItem('username', e.target.value)
+            localStorage.setItem('input-value', e.target.value)
         }
     }
 
@@ -31,7 +33,7 @@ export default function Input({ isPassword }: InputProps) {
             {location.pathname === '/login' ? (
                 <>
                     {isPassword ? 'Mot de passe' : 'Identifiant'}
-                    <InputGroup className="input-component">
+                    <InputGroup className="input-component-login">
                         <Form.Control
                             type={isPassword ? 'password' : 'text'}
                             placeholder={isPassword ? 'Password' : 'Username'}
@@ -39,6 +41,20 @@ export default function Input({ isPassword }: InputProps) {
                             onChange={HandleChangeInput}
                         />
                     </InputGroup>
+                </>
+            ) : (
+                ''
+            )}
+            {location.pathname === '/sequence' ? (
+                <>
+                    <span className="input-component-sequence">
+                        <Form.Control
+                            type="text"
+                            placeholder={placeholderValue}
+                            value={isPassword ? passwordValue : inputValue}
+                            onChange={HandleChangeInput}
+                        />
+                    </span>
                 </>
             ) : (
                 ''
