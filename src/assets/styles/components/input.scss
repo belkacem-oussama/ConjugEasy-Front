@@ -1,6 +1,7 @@
 @import '../_vars';
 
-.input-component {
+//STYLE FOR LOGIN-PAGE
+.input-component-login {
     border: none;
     background-color: white;
     padding: 10px;
@@ -15,5 +16,22 @@
         font-family: inherit;
         font-size: inherit;
         outline: none;
+    }
+}
+
+//STYLE FOR SEQUENCE-PAGE
+.input-component-sequence {
+    input {
+        border: none;
+        padding: 7px;
+        border-radius: $border-radius-input;
+        outline: none;
+
+        @media (max-width: 768px) {
+            width: 60px;
+        }
+        @media (min-width: 769px) and (max-width: 1440px) {
+            width: 70px;
+        }
     }
 }
