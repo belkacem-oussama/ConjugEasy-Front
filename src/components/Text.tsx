@@ -16,6 +16,6 @@ export default function Text() {
             return <span key={index}>{word} </span>
         }
     })
-    
+
     return <div className="text-display">{displayText}</div>
 }

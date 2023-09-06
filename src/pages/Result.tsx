@@ -3,6 +3,7 @@ import '../assets/styles/pages/result.scss'
 import Button from '../components/Button.tsx'
 import Square from '../components/Square.tsx'
 import { useState } from 'react'
+import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
 
 export default function Result() {
     const [readyForTest, setReadyForTest] = useState(false)
@@ -14,7 +15,11 @@ export default function Result() {
             </div>
             <div className="result-container-button">
                 <Link to="/train">
-                    <Button color="primary" text="Je m'exerce !" />
+                    <Button
+                        color="primary"
+                        text="Je m'exerce !"
+                        img={ConjugEasyExercice}
+                    />
                 </Link>
                 {readyForTest ? (
                     <Link to="/test">
