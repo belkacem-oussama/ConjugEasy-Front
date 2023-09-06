@@ -1,5 +1,6 @@
-import text from '../assets/json/text.json'
 import Input from './Input.tsx'
+
+import text from '../assets/json/text.json'
 import '../assets/styles/components/text.scss'
 
 export default function Text() {

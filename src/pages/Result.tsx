@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
-import '../assets/styles/pages/result.scss'
+import { useState } from 'react'
+
 import Button from '../components/Button.tsx'
 import Square from '../components/Square.tsx'
-import { useState } from 'react'
+
+import '../assets/styles/pages/result.scss'
 import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
 import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
 

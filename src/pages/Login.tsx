@@ -1,7 +1,9 @@
-import '../assets/styles/pages/login.scss'
-import Square from '../components/Square.tsx'
-import ConjugEasyLogo from '../assets/images/ConjugEasy.png'
 import { Link } from 'react-router-dom'
+
+import Square from '../components/Square.tsx'
+
+import '../assets/styles/pages/login.scss'
+import ConjugEasyLogo from '../assets/images/ConjugEasy.png'
 
 export default function Login() {
     return (

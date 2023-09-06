@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom'
+
 import '../assets/styles/components/button.scss'
 import '../assets/styles/images/logo.scss'
 

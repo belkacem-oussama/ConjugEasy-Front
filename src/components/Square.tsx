@@ -1,9 +1,11 @@
 import { useLocation, Link } from 'react-router-dom'
+
 import Input from './Input.tsx'
-import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import Button from './Button.tsx'
-import '../assets/styles/components/square.scss'
 import Text from './Text.tsx'
+
+import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
+import '../assets/styles/components/square.scss'
 import text from '../assets/json/text.json'
 
 export default function Square() {
