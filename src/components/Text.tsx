@@ -1,35 +1,21 @@
-import { useState } from 'react'
 import text from '../assets/json/text.json'
+import Input from './Input.tsx'
+import '../assets/styles/components/text.scss'
 
 export default function Text() {
-    const [replacedWords, setReplacedWords] = useState<{
-        [key: string]: boolean
-    }>({})
-
-    const handleVerbReplace = (verb: string) => {
-        setReplacedWords((prevReplacedWords) => ({
-            ...prevReplacedWords,
-            [verb]: true,
-        }))
-    }
-
     const wordsToReplace = text.words.filter((word) => text.text.includes(word))
 
     const displayText = text.text.split(' ').map((word, index) => {
-        if (wordsToReplace.includes(word) && !replacedWords[word]) {
+        if (wordsToReplace.includes(word)) {
             return (
                 <span key={index}>
-                    <input
-                        type="text"
-                        placeholder={word}
-                        onChange={(e) => handleVerbReplace(word)}
-                    />{' '}
+                    <Input placeholderValue={word} />{' '}
                 </span>
             )
         } else {
             return <span key={index}>{word} </span>
         }
     })
-
-    return <div>{displayText}</div>
+    
+    return <div className="text-display">{displayText}</div>
 }

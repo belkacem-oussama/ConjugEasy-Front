@@ -6,6 +6,7 @@ import '../assets/styles/components/square.scss'
 import Text from './Text.tsx'
 import text from '../assets/json/text.json'
 
+
 export default function Square() {
     const location = useLocation()
     return (
@@ -32,9 +33,7 @@ export default function Square() {
             )}
             {location.pathname === '/sequence' ? (
                 <div className="square-tablet-sequence">
-                    <p>
                         <Text />
-                    </p>
                 </div>
             ) : (
                 ''

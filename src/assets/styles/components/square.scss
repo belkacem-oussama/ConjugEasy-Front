@@ -29,14 +29,13 @@
 
 .square-tablet-sequence {
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: $button-primary-color;
     border-radius: $border-radius-square;
 
     @media (max-width: 768px) {
-        width: 260px;
-        height: 280px;
+        width: 290px;
+        height: 340px;
         padding: 10px;
     }
 
