@@ -1,5 +1,9 @@
-import React from 'react'
+import Chart from '../components/Chart.tsx'
 
 export default function Board() {
-    return <div>Board</div>
+    return (
+        <div className="board-page">
+            <Chart />
+        </div>
+    )
 }
