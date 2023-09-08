@@ -6,7 +6,9 @@ import Text from './Text.tsx'
 
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
+
 import '../assets/styles/components/square.scss'
+
 import text from '../assets/json/text.json'
 
 export default function Square() {

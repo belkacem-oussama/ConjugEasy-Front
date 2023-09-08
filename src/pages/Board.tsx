@@ -6,7 +6,6 @@ import DoughnutChart from '../components/Doughnut.tsx'
 import Button from '../components/Button.tsx'
 
 import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
-import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
 
 import '../assets/styles/pages/board.scss'
 

@@ -1,7 +1,8 @@
 import Input from './Input.tsx'
 
-import text from '../assets/json/text.json'
 import '../assets/styles/components/text.scss'
+
+import text from '../assets/json/text.json'
 
 export default function Text() {
     const wordsToReplace = text.words.filter((word) => text.text.includes(word))
