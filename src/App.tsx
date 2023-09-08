@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
 
 import Home from './pages/Home.tsx'
 import Footer from './layouts/Footer.tsx'
@@ -13,7 +13,11 @@ import Board from './pages/Board.tsx'
 
 import './assets/styles/main.scss'
 
+import user from './assets/json/user.json'
+
 export default function App() {
+    const [userRole, setUserRole] = useState<string>('teacher')
+
     const location = useLocation()
 
     return (
@@ -24,7 +28,10 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/personal" element={<PersonalSpace />} />
+                <Route
+                    path="/personal"
+                    element={<PersonalSpace userRole={userRole} />}
+                />
                 <Route path="/start" element={<Start />} />
                 <Route path="/sequence" element={<Sequence />} />
                 <Route path="/result" element={<Result />} />

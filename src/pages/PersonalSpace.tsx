@@ -19,7 +19,7 @@ import ConjugEasyTraining from '../assets/images/ConjugEasy_Training.png'
 import '../assets/styles/pages/personal-space.scss'
 import '../assets/styles/images/belt.scss'
 
-export default function PersonalSpace() {
+export default function PersonalSpace({ userRole }) {
     const [passedExercices, setPassedExercices] = useState<number>(0)
     const [readyToExam, setReadyToExam] = useState<boolean>(false)
     const [currentBelt, setCurrentBelt] = useState<string>('WhiteBelt')
@@ -62,26 +62,19 @@ export default function PersonalSpace() {
             break
     }
 
-    return (
+    return userRole === 'student' ? (
         <div className="personal-space-container">
-            <p>Salut Amel ! Alors, que veux-tu faire aujourd'hui ? </p>
+            <p>Salut Amel ! Alors, que veux-tu faire aujourd'hui ?</p>
             <p>Ceinture actuelle :</p>
             <img src={beltToDisplay} id="belt" />
             <div className="personal-space-container-main">
                 <div className="personal-space-container-main-top">
                     <Link to="/start">
-                        {readyToExam ? (
-                            <Button
-                                color="primary"
-                                text={textButton[0]}
-                            ></Button>
-                        ) : (
-                            <Button
-                                color="primary"
-                                text={textButton[1]}
-                                img={ConjugEasyTraining}
-                            ></Button>
-                        )}
+                        <Button
+                            color="primary"
+                            text={readyToExam ? textButton[0] : textButton[1]}
+                            img={readyToExam ? undefined : ConjugEasyTraining}
+                        />
                     </Link>
                     <Link to="/board">
                         <Button
@@ -105,5 +98,7 @@ export default function PersonalSpace() {
                 </div>
             </div>
         </div>
+    ) : (
+        <div className="personal-space-container">teacher</div>
     )
 }
