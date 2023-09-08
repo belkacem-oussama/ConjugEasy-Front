@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom'
 
 import Button from '../components/Button.tsx'
 
+//Import BELTS
 import ConjugEasyBlackBelt from '../assets/images/belts/ConjugEasy_BlackBelt.png'
 import ConjugEasyBrownBelt from '../assets/images/belts/ConjugEasy_BrownBelt.png'
 import ConjugEasyPurpleBelt from '../assets/images/belts/ConjugEasy_PurpleBelt.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png'
+
+//Import PICS
+import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
+import ConjugEasyResult from '../assets/images/ConjugEasy_Result.png'
+import ConjugEasyLogout from '../assets/images/ConjugEasy_Logout.png'
+import ConjugEasyTraining from '../assets/images/ConjugEasy_Training.png'
 
 import '../assets/styles/pages/personal-space.scss'
 import '../assets/styles/images/belt.scss'
@@ -72,14 +79,29 @@ export default function PersonalSpace() {
                             <Button
                                 color="primary"
                                 text={textButton[1]}
+                                img={ConjugEasyTraining}
                             ></Button>
                         )}
                     </Link>
-                    <Button color="primary" text={textButton[2]} />
+                    <Link to="/board">
+                        <Button
+                            color="primary"
+                            text={textButton[2]}
+                            img={ConjugEasyResult}
+                        />
+                    </Link>
                 </div>
                 <div className="personal-space-container-main-bottom">
-                    <Button color="primary" text={textButton[3]} />
-                    <Button color="primary" text={textButton[4]} />
+                    <Button
+                        color="primary"
+                        text={textButton[3]}
+                        img={ConjugEasyExercice}
+                    />
+                    <Button
+                        color="primary"
+                        text={textButton[4]}
+                        img={ConjugEasyLogout}
+                    />
                 </div>
             </div>
         </div>

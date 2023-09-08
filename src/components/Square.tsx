@@ -5,7 +5,7 @@ import Button from './Button.tsx'
 import Text from './Text.tsx'
 
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
-import ConjugEasyBrownBelt from '../assets/images/belts/ConjugEasy_BrownBelt.png'
+import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 import '../assets/styles/components/square.scss'
 import text from '../assets/json/text.json'
 
@@ -61,13 +61,9 @@ export default function Square() {
                             les verbes suivants : être, avoir, manger
                         </p>
                     </div>
-                    <div className="square-tablet-board-answers">
-                        <p>Nombre de bonnes réponses : 40</p>
-                        <p>Nombre de mauvaises réponses : 50</p>
-                    </div>
                     <div className="square-tablet-board-belt">
-                        <p>Ceinture actuelle :</p>
-                        <img src={ConjugEasyBrownBelt} id="belt" />
+                        <p>Prochaine ceinture :</p>
+                        <img src={ConjugEasyBlueBelt} id="belt" />
                     </div>
                 </div>
             ) : (

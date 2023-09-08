@@ -2,10 +2,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    justify-content: center;
 
     p {
         text-align: center;
+        @media (max-width: 768px) {
+            margin-top: 40px;
+        }
+        @media (min-width: 769px) and (max-width: 1440px) {
+            p {
+                margin-top: 50px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            p {
+                margin-top: 80px;
+            }
+        }
     }
 
     @media (max-width: 768px) {
@@ -14,18 +28,12 @@
 
     @media (min-width: 769px) and (max-width: 1440px) {
         height: 700px;
-        p {
-            font-size: 30px;
-        }
     }
 
     @media (min-width: 1440px) {
-        height: 900px;
-
-        p {
-            font-size: 30px;
-        }
+        height: 700px;
     }
+
     &-main {
         display: flex;
         flex-direction: column;

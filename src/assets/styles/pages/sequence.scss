@@ -1,19 +1,15 @@
 .sequence-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     @media (max-width: 768px) {
         height: 600px;
     }
     @media (min-width: 769px) and (max-width: 1440px) {
-        height: 800px;
+        height: 600px;
     }
     @media (min-width: 1440px) {
-        height: 500px;
-        width: 700px;
-        margin: auto;
-        margin-top: 150px;
     }
     &-page {
         display: flex;

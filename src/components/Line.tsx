@@ -61,10 +61,10 @@ export const data = {
     ],
 }
 
-export default function Chart() {
+export default function LineChart() {
     return (
         <div className="chart-component">
-            <Line options={options} data={data} />
+            <Line data={data} options={options} />
         </div>
     )
 }
