@@ -1,5 +1,6 @@
-import ConjugEasyFooter from '../assets/images/ConjugEasy_Bag.png'
 import { useLocation } from 'react-router-dom'
+
+import ConjugEasyFooter from '../assets/images/ConjugEasy_Bag.png'
 
 import '../assets/styles/layouts/footer.scss'
 

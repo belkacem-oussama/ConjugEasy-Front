@@ -9,9 +9,9 @@ import PersonalSpace from './pages/PersonalSpace.tsx'
 import Start from './pages/Start.tsx'
 import Sequence from './pages/Sequence.tsx'
 import Result from './pages/Result.tsx'
+import Board from './pages/Board.tsx'
 
 import './assets/styles/main.scss'
-import Board from './pages/Board.tsx'
 
 export default function App() {
     const location = useLocation()

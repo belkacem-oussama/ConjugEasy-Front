@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
+
 import ConjugEasyTop from '../assets/images/ConjugEasy_Top.png'
+
 import '../assets/styles/layouts/header.scss'
 
 export default function Header() {
