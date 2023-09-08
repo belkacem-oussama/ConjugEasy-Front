@@ -34,7 +34,11 @@ const Button: React.FC<Props> = ({ color, text, size, img }) => {
                 break
         }
 
-        location.pathname === '/result' ? (styles += 'button-result') : ''
+        location.pathname === '/result' ||
+        location.pathname === '/board' ||
+        location.pathname === '/personal'
+            ? (styles += 'button-result')
+            : ''
 
         return styles
     }

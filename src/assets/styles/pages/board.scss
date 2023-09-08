@@ -1,0 +1,39 @@
+.board-page {
+    display: flex;
+
+    @media (max-width: 768px) {
+        margin-top: 50px;
+        flex-direction: column;
+    }
+
+    @media (min-width: 1440px) {
+        height: 630px;
+    }
+
+    &-container-c {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1440px) {
+            width: 50%;
+        }
+    }
+
+    &-container-sb {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
