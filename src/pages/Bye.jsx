@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import Button from '../components/Button.jsx'
 
 import ConjugEasyBye from '../assets/images/bye/ConjugEasy_Bye.png'
@@ -11,11 +13,13 @@ export default function Bye() {
             <div className="bye-page-container">
                 <h1>Ohh ! Il est déjà 16h30 ? Salut! </h1>
                 <img src={ConjugEasyBye} />
-                <Button
-                    color="secondary"
-                    text="Retour à l'accueil"
-                    img={ConjugEasyHome}
-                />
+                <Link to="/">
+                    <Button
+                        color="secondary"
+                        text="Retour à l'accueil"
+                        img={ConjugEasyHome}
+                    />
+                </Link>
             </div>
         </div>
     )
