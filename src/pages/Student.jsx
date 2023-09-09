@@ -16,7 +16,7 @@ import ConjugEasyPurpleBelt from '../assets/images/belts/ConjugEasy_PurpleBelt.p
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png'
 
-export default function Student({ setIsLogged }) {
+export default function Student({ handleLogout }) {
     const navigate = useNavigate()
 
     const [passedExercices, setPassedExercices] = useState(0)
@@ -37,11 +37,6 @@ export default function Student({ setIsLogged }) {
         3: 'Purple',
         4: 'Brown',
         5: 'Black',
-    }
-
-    const handleLogout = () => {
-        setIsLogged(false)
-        navigate('/bye-bye')
     }
 
     let beltToDisplay = ''
