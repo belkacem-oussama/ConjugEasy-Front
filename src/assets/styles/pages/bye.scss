@@ -1,15 +1,19 @@
 @import '../_vars';
 
 .bye-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
+
     @media (max-width: 768px) {
         height: 600px;
         width: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    }
+    @media (min-width: 768px) and (max-width: 1440px) {
+        height: 650px;
+        width: 500px;
     }
 
     &-container {
@@ -17,16 +21,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: $button-primary-color;
+        border-radius: $border-radius-square;
+        img {
+            width: 100%;
+        }
+
         h1 {
             text-align: center;
             color: $background-color;
-        }
-        @media (max-width: 768px) {
-            background-color: $button-primary-color;
-            border-radius: $border-radius-square;
-            img {
-                width: 100%;
-            }
         }
     }
 }
