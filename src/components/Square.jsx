@@ -6,7 +6,7 @@ import Text from './Text.jsx'
 
 import text from '../assets/json/text.json'
 
-import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
+import ConjugEasyLogo from '../assets/images/logo/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 
 import '../assets/styles/components/square.scss'

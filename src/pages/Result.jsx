@@ -4,9 +4,9 @@ import { useState } from 'react'
 import Button from '../components/Button.jsx'
 import Square from '../components/Square.jsx'
 
-import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
-import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
-import ConjugEasyResult from '../assets/images/ConjugEasy_Result.png'
+import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
+import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
+import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 
 import '../assets/styles/pages/result.scss'
 
