@@ -15,7 +15,6 @@ import Bye from './pages/Bye.jsx'
 import './assets/styles/main.scss'
 
 export default function App() {
-    const [userInformations, setUserInformation] = useState()
     const [inputValue, setInputValue] = useState('')
     const [passwordValue, setPasswordValue] = useState('')
     const [isLogged, setIsLogged] = useState(false)
@@ -52,7 +51,6 @@ export default function App() {
                             <PersonalSpace
                                 isLogged={isLogged}
                                 setIsLogged={setIsLogged}
-                                userInformations={userInformations}
                             />
                         }
                     />
