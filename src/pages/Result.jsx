@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-import Button from '../components/Button.tsx'
-import Square from '../components/Square.tsx'
+import Button from '../components/Button.jsx'
+import Square from '../components/Square.jsx'
 
 import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
 import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
@@ -11,9 +11,9 @@ import ConjugEasyResult from '../assets/images/ConjugEasy_Result.png'
 import '../assets/styles/pages/result.scss'
 
 export default function Result() {
-    const [readyForTest, setReadyForTest] = useState<boolean>(false)
+    const [readyForTest, setReadyForTest] = useState(false)
 
-    const textButton: string[] = [
+    const textButton = [
         "Je m'exerce",
         'Je consulte mes résultats',
         "Retour à l'espace perso",

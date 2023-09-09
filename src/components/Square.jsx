@@ -1,15 +1,24 @@
 import { useLocation, Link } from 'react-router-dom'
 
-import Input from './Input.tsx'
-import Button from './Button.tsx'
-import Text from './Text.tsx'
+import Input from './Input.jsx'
+import Button from './Button.jsx'
+import Text from './Text.jsx'
+
+import text from '../assets/json/text.json'
 
 import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
-import '../assets/styles/components/square.scss'
-import text from '../assets/json/text.json'
 
-export default function Square() {
+import '../assets/styles/components/square.scss'
+
+export default function Square({
+    handleLogin,
+    inputValue,
+    setInputValue,
+    passwordValue,
+    setPasswordValue,
+    errorMessage,
+}) {
     const location = useLocation()
     return (
         <>
@@ -20,15 +29,22 @@ export default function Square() {
                         id="login-logo"
                         alt="ConjugEasy Logo"
                     />
-                    <Input />
-                    <Input isPassword />
-                    <Link to="/personal">
-                        <Button
-                            color="secondary"
-                            text="Connexion"
-                            size="small"
-                        />
-                    </Link>
+                    <Input
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
+                    <Input
+                        isPassword
+                        passwordValue={passwordValue}
+                        setPasswordValue={setPasswordValue}
+                    />
+                    {errorMessage ? <p>Oups...mauvais identifiants</p> : null}
+                    <Button
+                        color="secondary"
+                        text="Connexion"
+                        size="small"
+                        onClick={handleLogin}
+                    />
                 </div>
             ) : (
                 ''

@@ -24,7 +24,7 @@ export const options = {
     responsive: true,
     plugins: {
         legend: {
-            position: 'bottom' as const,
+            position: 'bottom',
         },
     },
 }
