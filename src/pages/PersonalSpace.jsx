@@ -1,4 +1,4 @@
-import Prof from './Prof.jsx'
+import Prof from './Teacher.jsx'
 import Student from './Student.jsx'
 
 import '../assets/styles/pages/personal-space.scss'
