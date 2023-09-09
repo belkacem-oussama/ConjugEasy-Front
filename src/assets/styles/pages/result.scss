@@ -6,9 +6,11 @@
 
     @media (max-width: 768px) {
     }
+
     @media (min-width: 769px) and (max-width: 1440px) {
         height: 800px;
     }
+
     @media (min-width: 1440px) {
         height: 760px;
     }
@@ -21,9 +23,11 @@
         @media (max-width: 768px) {
             height: 600px;
         }
+
         @media (min-width: 769px) and (max-width: 1440px) {
             height: 800px;
         }
+
         @media (min-width: 1440px) {
             height: 500px;
             width: 700px;
@@ -36,10 +40,12 @@
             @media (max-width: 767px) {
                 height: 300px;
             }
+
             @media (min-width: 768px) and (max-width: 1440px) {
                 height: 300px;
                 width: 700px;
             }
+
             @media (min-width: 1440px) {
                 height: 300px;
                 width: 700px;

@@ -4,9 +4,11 @@
     @media (max-width: 768px) {
         margin: 10px;
     }
+
     @media (min-width: 769px) and (max-width: 1440px) {
         margin: 15px;
     }
+
     @media (min-width: 1440px) {
         margin: 20px;
     }
@@ -106,10 +108,12 @@
         width: 230px;
         height: 65px;
     }
+
     @media (min-width: 769px) and (max-width: 1440px) {
         font-size: 26px;
         width: 340px;
     }
+
     @media (min-width: 1440px) {
         font-size: 24px;
     }
