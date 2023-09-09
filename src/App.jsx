@@ -11,9 +11,9 @@ import Sequence from './pages/Sequence.jsx'
 import Result from './pages/Result.jsx'
 import Board from './pages/Board.jsx'
 import Bye from './pages/Bye.jsx'
+import Add from './pages/Add.jsx'
 
 import './assets/styles/main.scss'
-import Add from './pages/Add.jsx'
 
 export default function App() {
     const [inputValue, setInputValue] = useState('')
