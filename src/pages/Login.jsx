@@ -14,9 +14,8 @@ export default function Login({
     setInputValue,
     passwordValue,
     setPasswordValue,
+    isLogged,
     setIsLogged,
-    userRole,
-    setUserRole,
     errorMessage,
     setErrorMessage,
 }) {
@@ -25,6 +24,7 @@ export default function Login({
     const handleSuccessfullAuth = () => {
         setIsLogged(true)
         setErrorMessage(false)
+        localStorage.setItem('isLogged', { isLogged })
         navigate('/personal')
     }
 

@@ -24,7 +24,7 @@ export default function Teacher({ handleLogout }) {
             </p>
             <div className="personal-space-container-main">
                 <div className="personal-space-container-main-top">
-                    <Link to="/start">
+                    <Link to="/personal/add">
                         <Button
                             color="primary"
                             text={textButton[0]}
