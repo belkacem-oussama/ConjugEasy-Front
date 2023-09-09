@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 import Button from '../components/Button.jsx'
 
-import ConjugEasyTitle from '.././assets/images/ConjugEasy.png'
-import ConjugEasyCahier from '.././assets/images/ConjugEasy_Cahier.png'
+import ConjugEasyTitle from '.././assets/images/home/ConjugEasy.png'
+import ConjugEasyCahier from '.././assets/images/home/ConjugEasy_Cahier.png'
 
 import '.././assets/styles/pages/home.scss'
 

@@ -5,7 +5,7 @@ import LineChart from '../components/Line.jsx'
 import DoughnutChart from '../components/Doughnut.jsx'
 import Button from '../components/Button.jsx'
 
-import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
+import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 
 import '../assets/styles/pages/board.scss'
 

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import ConjugEasyTop from '../assets/images/ConjugEasy_Top.png'
+import ConjugEasyTop from '../assets/images/layouts/ConjugEasy_Top.png'
 
 import '../assets/styles/layouts/header.scss'
 

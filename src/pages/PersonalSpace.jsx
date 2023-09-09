@@ -11,10 +11,10 @@ import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png'
 
 // Import PICS
-import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
-import ConjugEasyResult from '../assets/images/ConjugEasy_Result.png'
-import ConjugEasyLogout from '../assets/images/ConjugEasy_Logout.png'
-import ConjugEasyTraining from '../assets/images/ConjugEasy_Training.png'
+import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
+import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
+import ConjugEasyLogout from '../assets/images/logo/ConjugEasy_Logout.png'
+import ConjugEasyTraining from '../assets/images/logo/ConjugEasy_Training.png'
 
 //Import STYLES
 import '../assets/styles/pages/personal-space.scss'
