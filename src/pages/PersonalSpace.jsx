@@ -4,6 +4,7 @@ import Student from './Student.jsx'
 import '../assets/styles/pages/personal-space.scss'
 import '../assets/styles/images/belt.scss'
 import { useNavigate } from 'react-router-dom'
+import Teacher from './Teacher.jsx'
 
 export default function PersonalSpace({ setIsLogged }) {
     const navigate = useNavigate()
@@ -22,7 +23,10 @@ export default function PersonalSpace({ setIsLogged }) {
                     handleLogout={handleLogout}
                 />
             ) : (
-                <Prof setIsLogged={setIsLogged} handleLogout={handleLogout} />
+                <Teacher
+                    setIsLogged={setIsLogged}
+                    handleLogout={handleLogout}
+                />
             )}
         </>
     )
