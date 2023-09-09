@@ -1,10 +1,10 @@
-import Prof from './Teacher.jsx'
+import { useNavigate } from 'react-router-dom'
+
 import Student from './Student.jsx'
+import Teacher from './Teacher.jsx'
 
 import '../assets/styles/pages/personal-space.scss'
 import '../assets/styles/images/belt.scss'
-import { useNavigate } from 'react-router-dom'
-import Teacher from './Teacher.jsx'
 
 export default function PersonalSpace({ setIsLogged }) {
     const navigate = useNavigate()
