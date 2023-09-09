@@ -11,9 +11,15 @@
         height: 600px;
         width: 300px;
     }
+
     @media (min-width: 768px) and (max-width: 1440px) {
         height: 650px;
         width: 500px;
+    }
+
+    @media (min-width: 1440px) {
+        height: 700px;
+        width: 600px;
     }
 
     &-container {
