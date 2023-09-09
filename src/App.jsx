@@ -45,7 +45,7 @@ export default function App() {
                         />
                     }
                 />
-                {isLogged ? (
+                {isLogged && (
                     <Route
                         path="/personal"
                         element={
@@ -55,7 +55,7 @@ export default function App() {
                             />
                         }
                     />
-                ) : null}
+                )}
                 <Route path="/personal/add" element={<Add />} />
                 <Route path="/start" element={<Start />} />
                 <Route path="/sequence" element={<Sequence />} />
