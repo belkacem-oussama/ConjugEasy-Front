@@ -12,6 +12,7 @@ export default function PersonalSpace({ setIsLogged }) {
 
     const handleLogout = () => {
         setIsLogged(false)
+        localStorage.clear()
         navigate('/bye-bye')
     }
 

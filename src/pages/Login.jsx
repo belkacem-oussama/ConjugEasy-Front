@@ -15,6 +15,8 @@ export default function Login({
     passwordValue,
     setPasswordValue,
     setIsLogged,
+    userRole,
+    setUserRole,
     errorMessage,
     setErrorMessage,
 }) {
