@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import Square from '../components/Square.jsx'
 
-import ConjugEasyLogo from '../assets/images/ConjugEasy.png'
+import ConjugEasyLogo from '../assets/images/home/ConjugEasy.png'
 
 import users from '../assets/json/user.json'
 
