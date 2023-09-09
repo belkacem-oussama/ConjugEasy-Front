@@ -1,30 +1,24 @@
-import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
+
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
 import '../assets/styles/components/input.scss'
 
-interface InputProps {
-    isPassword?: boolean
-    placeholderValue?: string
-}
-
-export default function Input({ isPassword, placeholderValue }: InputProps) {
-    const [inputValue, setInputValue] = useState<string>('')
-    const [passwordValue, setPasswordValue] = useState<string>('')
+export default function Input({
+    inputValue,
+    setInputValue,
+    passwordValue,
+    setPasswordValue,
+    isPassword,
+    placeholderValue,
+}) {
     const location = useLocation()
 
-    const HandleChangeInput = (e: any) => {
+    const HandleChangeInput = (e) => {
         isPassword
             ? setPasswordValue(e.target.value)
             : setInputValue(e.target.value)
-
-        if (isPassword) {
-            localStorage.setItem('password', e.target.value)
-        } else {
-            localStorage.setItem('input-value', e.target.value)
-        }
     }
 
     return (

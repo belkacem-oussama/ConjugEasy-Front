@@ -1,4 +1,4 @@
-import Input from './Input.tsx'
+import Input from './Input.jsx'
 
 import '../assets/styles/components/text.scss'
 

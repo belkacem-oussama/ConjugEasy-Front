@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.tsx'
-import Button from '../components/Button.tsx'
+import Square from '../components/Square.jsx'
+import Button from '../components/Button.jsx'
 
 import '../assets/styles/pages/sequence.scss'
 
