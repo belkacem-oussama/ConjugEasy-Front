@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function Prof() {
+export default function Teacher() {
     return <div>Prof</div>
 }
