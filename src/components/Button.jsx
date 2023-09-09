@@ -29,7 +29,8 @@ const Button = ({ color, text, size, img, onClick }) => {
 
         location.pathname === '/result' ||
         location.pathname === '/board' ||
-        location.pathname === '/personal'
+        location.pathname === '/personal' ||
+        location.pathname === '/bye-bye'
             ? (styles += 'button-result')
             : ''
 
