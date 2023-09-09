@@ -21,6 +21,7 @@ export default function App() {
     const [isLogged, setIsLogged] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
 
+    const userRoles = localStorage.getItem('user-role')
     const location = useLocation()
 
     return (
@@ -56,7 +57,9 @@ export default function App() {
                         }
                     />
                 )}
-                <Route path="/personal/add" element={<Add />} />
+                {isLogged && userRoles === 'teacher' && (
+                    <Route path="/personal/add" element={<Add />} />
+                )}
                 <Route path="/start" element={<Start />} />
                 <Route path="/sequence" element={<Sequence />} />
                 <Route path="/result" element={<Result />} />
