@@ -13,6 +13,7 @@ import Board from './pages/Board.jsx'
 import Bye from './pages/Bye.jsx'
 
 import './assets/styles/main.scss'
+import Add from './pages/Add.jsx'
 
 export default function App() {
     const [inputValue, setInputValue] = useState('')
@@ -55,6 +56,7 @@ export default function App() {
                         }
                     />
                 ) : null}
+                <Route path="/personal/add" element={<Add />} />
                 <Route path="/start" element={<Start />} />
                 <Route path="/sequence" element={<Sequence />} />
                 <Route path="/result" element={<Result />} />
