@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 
 import Home from './pages/Home.jsx'
@@ -13,6 +13,8 @@ import Board from './pages/Board.jsx'
 import Bye from './pages/Bye.jsx'
 import Add from './pages/Add.jsx'
 
+import users from '../src/assets/json/user.json'
+
 import './assets/styles/main.scss'
 
 export default function App() {
@@ -22,7 +24,54 @@ export default function App() {
     const [errorMessage, setErrorMessage] = useState(false)
 
     const userRoles = localStorage.getItem('user-role')
+    const logged = localStorage.getItem('isLogged')
+
     const location = useLocation()
+    const navigate = useNavigate()
+
+    const handleFailedAuth = () => {
+        navigate('/login')
+        setErrorMessage(true)
+    }
+
+    const handleSuccessfullAuth = () => {
+        setIsLogged(true)
+        setErrorMessage(false)
+        localStorage.setItem('isLogged', JSON.stringify(true))
+        navigate('/personal')
+    }
+
+    const handleLogin = async () => {
+        try {
+            const login = inputValue
+            const password = passwordValue
+
+            const loggedUser = users.find(
+                (user) => user.login === login && user.mdp === password
+            )
+
+            if (loggedUser) {
+                handleSuccessfullAuth()
+
+                const username = localStorage.setItem(
+                    'user-name',
+                    loggedUser.name
+                )
+                const surname = localStorage.setItem(
+                    'user-surname',
+                    loggedUser.surname
+                )
+                const role = localStorage.setItem('user-role', loggedUser.role)
+            } else {
+                handleFailedAuth()
+            }
+        } catch (error) {
+            console.error(
+                'Erreur lors de la récupération des données utilisateur :',
+                error
+            )
+        }
+    }
 
     return (
         <React.Fragment>
@@ -43,10 +92,11 @@ export default function App() {
                             setIsLogged={setIsLogged}
                             errorMessage={errorMessage}
                             setErrorMessage={setErrorMessage}
+                            handleLogin={handleLogin}
                         />
                     }
                 />
-                {isLogged && (
+                {logged && (
                     <Route
                         path="/personal"
                         element={
@@ -57,7 +107,7 @@ export default function App() {
                         }
                     />
                 )}
-                {isLogged && userRoles === 'teacher' && (
+                {logged && userRoles === 'teacher' && (
                     <Route path="/personal/add" element={<Add />} />
                 )}
                 <Route path="/start" element={<Start />} />
