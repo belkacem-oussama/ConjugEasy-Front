@@ -1,0 +1,11 @@
+@import 'loaders.css/src/animations/pacman.scss';
+@import '../_vars';
+
+$primary-color: $button-primary-hover-color;
+
+.loader-hidden {
+    display: none;
+}
+.loader-active {
+    display: block;
+}

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import '../assets/styles/components/button.scss'
 import '../assets/styles/images/logo.scss'
 
-const Button = ({ color, text, size, img, onClick }) => {
+const Button = ({ color, text, size, img, error, onClick }) => {
     const location = useLocation()
     const getButtonStyle = () => {
         let styles = 'size_button '
@@ -25,6 +25,10 @@ const Button = ({ color, text, size, img, onClick }) => {
                 break
             default:
                 break
+        }
+
+        if (error) {
+            styles += 'shake-horizontal'
         }
 
         location.pathname === '/result' ||
