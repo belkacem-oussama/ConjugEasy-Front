@@ -7,14 +7,16 @@ import ConjugEasyCahier from '.././assets/images/home/ConjugEasy_Cahier.png'
 
 import '.././assets/styles/pages/home.scss'
 
-export default function Home() {
-    const firstTwoButtonsText = ['Élève', 'Professeur']
-    const firstTwoButtons = firstTwoButtonsText.map((label, index) => (
-        <Button key={index} color="primary" text={label}></Button>
-    ))
+export default function Home({ handleLogout }) {
+    const ButtonsText = [
+        'Élève',
+        'Professeur',
+        'Visiteur',
+        'Espace personel',
+        'Se déconnecter',
+    ]
 
-    const thirdButtonText = 'Visiteur'
-    const thirdButton = <Button color="primary" text={thirdButtonText}></Button>
+    const isLogged = localStorage.getItem('isLogged')
 
     return (
         <div className="home">
@@ -23,14 +25,42 @@ export default function Home() {
                 <div className="home-buttons-img-container">
                     <img src={ConjugEasyCahier} alt="ConjugEasy Notes" />
                 </div>
-                <div className="home-buttons-container">
-                    <Link to="/login">
-                        <div className="home-buttons-top">
-                            {firstTwoButtons}
+                {!isLogged ? (
+                    <div className="home-buttons-container">
+                        <Link to="/login">
+                            <div className="home-buttons-top">
+                                <Button
+                                    color="primary"
+                                    text={ButtonsText[0]}
+                                ></Button>
+                                <Button
+                                    color="primary"
+                                    text={ButtonsText[1]}
+                                ></Button>
+                            </div>
+                        </Link>
+                        <div className="home-buttons-bottom">
+                            <Button
+                                color="primary"
+                                text={ButtonsText[2]}
+                            ></Button>
                         </div>
-                    </Link>
-                    <div className="home-buttons-bottom">{thirdButton}</div>
-                </div>
+                    </div>
+                ) : (
+                    <>
+                        <Link to="/personal">
+                            <Button
+                                color="primary"
+                                text={ButtonsText[3]}
+                            ></Button>
+                        </Link>
+                        <Button
+                            color="primary"
+                            text={ButtonsText[4]}
+                            onClick={handleLogout}
+                        ></Button>
+                    </>
+                )}
             </div>
         </div>
     )
