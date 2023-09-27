@@ -22,6 +22,7 @@ export default function App() {
     const [passwordValue, setPasswordValue] = useState('')
     const [isLogged, setIsLogged] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const userRoles = localStorage.getItem('user-role')
     const logged = localStorage.getItem('isLogged')
@@ -31,12 +32,14 @@ export default function App() {
 
     const handleFailedAuth = () => {
         navigate('/login')
+        setIsLoading(false)
         setErrorMessage(true)
     }
 
     const handleSuccessfullAuth = () => {
         setIsLogged(true)
         setErrorMessage(false)
+        setIsLoading(false)
         localStorage.setItem('isLogged', JSON.stringify(true))
         navigate('/personal')
     }
@@ -46,12 +49,16 @@ export default function App() {
             const login = inputValue
             const password = passwordValue
 
+            setIsLoading(true)
+
             const loggedUser = users.find(
                 (user) => user.login === login && user.mdp === password
             )
 
             if (loggedUser) {
-                handleSuccessfullAuth()
+                setTimeout(() => {
+                    handleSuccessfullAuth()
+                }, 3000)
 
                 const username = localStorage.setItem(
                     'user-name',
@@ -102,6 +109,8 @@ export default function App() {
                             errorMessage={errorMessage}
                             setErrorMessage={setErrorMessage}
                             handleLogin={handleLogin}
+                            isLoading={isLoading}
+                            setIsLoading={setIsLoading}
                         />
                     }
                 />
