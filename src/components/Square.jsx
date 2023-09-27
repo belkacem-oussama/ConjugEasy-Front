@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import Input from './Input.jsx'
 import Button from './Button.jsx'

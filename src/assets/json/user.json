@@ -1,34 +1,18 @@
 [
     {
         "id": 1,
-        "login": "martin.matin@gmail.com",
-        "mdp": "martin-matin",
-        "name": "MARTIN",
-        "surname": "Matin",
+        "login": "teacher",
+        "mdp": "teacher",
+        "name": "teacher",
+        "surname": "teacher",
         "role": "teacher"
     },
     {
         "id": 2,
-        "login": "roronoa-zorro@gmail.com",
-        "mdp": "roronoa-zorro",
-        "name": "RORONOA",
-        "surname": "Zorro",
+        "login": "student",
+        "mdp": "student",
+        "name": "student",
+        "surname": "student",
         "role": "student"
-    },
-    {
-        "id": 3,
-        "login": "walter.white@gmail.com",
-        "mdp": "walter-white",
-        "name": "WALTER",
-        "surname": "White",
-        "role": "visitor"
-    },
-    {
-        "id": 4,
-        "login": "test",
-        "mdp": "test",
-        "name": "test",
-        "surname": "test",
-        "role": "teacher"
     }
 ]
