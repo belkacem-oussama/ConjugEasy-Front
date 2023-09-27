@@ -18,7 +18,8 @@ export default function Input({
     const location = useLocation()
 
     const HandleChangeInput = (e) => {
-        setErrorMessage(false)
+        errorMessage ? setErrorMessage(false) : null
+
         isPassword
             ? setPasswordValue(e.target.value)
             : setInputValue(e.target.value)
