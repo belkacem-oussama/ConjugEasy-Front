@@ -13,6 +13,9 @@ export default function Login({
     setPasswordValue,
     handleLogin,
     errorMessage,
+    setErrorMessage,
+    isLoading,
+    setIsLoading,
 }) {
     return (
         <div className="login-container">
@@ -22,11 +25,14 @@ export default function Login({
             <div className="login-container-page">
                 <Square
                     errorMessage={errorMessage}
+                    setErrorMessage={setErrorMessage}
                     handleLogin={handleLogin}
                     inputValue={inputValue}
                     setInputValue={setInputValue}
                     passwordValue={passwordValue}
                     setPasswordValue={setPasswordValue}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
                 />
             </div>
         </div>

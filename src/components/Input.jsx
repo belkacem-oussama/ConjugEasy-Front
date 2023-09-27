@@ -12,10 +12,13 @@ export default function Input({
     setPasswordValue,
     isPassword,
     placeholderValue,
+    errorMessage,
+    setErrorMessage,
 }) {
     const location = useLocation()
 
     const HandleChangeInput = (e) => {
+        setErrorMessage(false)
         isPassword
             ? setPasswordValue(e.target.value)
             : setInputValue(e.target.value)
@@ -23,7 +26,7 @@ export default function Input({
 
     return (
         <>
-            {location.pathname === '/login' ? (
+            {location.pathname === '/login' && (
                 <>
                     {isPassword ? 'Mot de passe' : 'Identifiant'}
                     <InputGroup className="input-component-login">
@@ -35,10 +38,9 @@ export default function Input({
                         />
                     </InputGroup>
                 </>
-            ) : (
-                ''
             )}
-            {location.pathname === '/sequence' ? (
+
+            {location.pathname === '/sequence' && (
                 <>
                     <span className="input-component-sequence">
                         <Form.Control
@@ -49,8 +51,6 @@ export default function Input({
                         />
                     </span>
                 </>
-            ) : (
-                ''
             )}
         </>
     )

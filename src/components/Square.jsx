@@ -10,6 +10,7 @@ import ConjugEasyLogo from '../assets/images/logo/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 
 import '../assets/styles/components/square.scss'
+import LoaderComponent from './Loader.jsx'
 
 export default function Square({
     handleLogin,
@@ -18,6 +19,8 @@ export default function Square({
     passwordValue,
     setPasswordValue,
     errorMessage,
+    setErrorMessage,
+    isLoading,
 }) {
     const location = useLocation()
     return (
@@ -32,19 +35,28 @@ export default function Square({
                     <Input
                         inputValue={inputValue}
                         setInputValue={setInputValue}
+                        errorMessage={errorMessage}
+                        setErrorMessage={setErrorMessage}
                     />
                     <Input
                         isPassword
                         passwordValue={passwordValue}
                         setPasswordValue={setPasswordValue}
+                        errorMessage={errorMessage}
+                        setErrorMessage={setErrorMessage}
                     />
-                    {errorMessage ? <p>Oups...mauvais identifiants</p> : null}
-                    <Button
-                        color="secondary"
-                        text="Connexion"
-                        size="small"
-                        onClick={handleLogin}
-                    />
+                    {}
+                    {isLoading ? (
+                        <LoaderComponent />
+                    ) : (
+                        <Button
+                            color="secondary"
+                            text={errorMessage ? 'Oups...' : 'Connexion'}
+                            size="small"
+                            onClick={handleLogin}
+                            error={errorMessage}
+                        />
+                    )}
                 </div>
             ) : (
                 ''
