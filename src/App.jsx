@@ -73,13 +73,22 @@ export default function App() {
         }
     }
 
+    const handleLogout = () => {
+        setIsLogged(false)
+        localStorage.clear()
+        navigate('/bye-bye')
+    }
+
     return (
         <React.Fragment>
             {location.pathname !== '/' && location.pathname !== '/login' && (
                 <Header />
             )}
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route
+                    path="/"
+                    element={<Home handleLogout={handleLogout} />}
+                />
                 <Route
                     path="/login"
                     element={
@@ -102,6 +111,7 @@ export default function App() {
                         element={
                             <PersonalSpace
                                 isLogged={isLogged}
+                                handleLogout={handleLogout}
                                 setIsLogged={setIsLogged}
                             />
                         }
