@@ -18,8 +18,17 @@ import users from '../src/assets/json/user.json'
 import './assets/styles/main.scss'
 
 export default function App() {
-    const [inputValue, setInputValue] = useState('')
-    const [passwordValue, setPasswordValue] = useState('')
+    const initialValues = {
+        Username: '',
+        Password: '',
+        FirstAnswer: '',
+        SecondAnswer: '',
+        ThirdAnswer: '',
+        FourthAnswer: '',
+        FifthAnswer: '',
+    }
+
+    const [inputValue, setInputValue] = useState(initialValues)
     const [isLogged, setIsLogged] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -46,8 +55,8 @@ export default function App() {
 
     const handleLogin = async () => {
         try {
-            const login = inputValue
-            const password = passwordValue
+            const login = inputValue.Username
+            const password = inputValue.Password
 
             setIsLoading(true)
 
@@ -102,8 +111,6 @@ export default function App() {
                         <Login
                             inputValue={inputValue}
                             setInputValue={setInputValue}
-                            passwordValue={passwordValue}
-                            setPasswordValue={setPasswordValue}
                             isLogged={isLogged}
                             setIsLogged={setIsLogged}
                             errorMessage={errorMessage}
@@ -130,7 +137,15 @@ export default function App() {
                     <Route path="/personal/add" element={<Add />} />
                 )}
                 <Route path="/start" element={<Start />} />
-                <Route path="/sequence" element={<Sequence />} />
+                <Route
+                    path="/sequence"
+                    element={
+                        <Sequence
+                            inputValue={inputValue}
+                            setInputValue={setInputValue}
+                        />
+                    }
+                />
                 <Route path="/result" element={<Result />} />
                 <Route path="/board" element={<Board />} />
                 <Route path="/bye-bye" element={<Bye />} />

@@ -9,8 +9,6 @@ import '../assets/styles/pages/login.scss'
 export default function Login({
     inputValue,
     setInputValue,
-    passwordValue,
-    setPasswordValue,
     handleLogin,
     errorMessage,
     setErrorMessage,
@@ -29,8 +27,6 @@ export default function Login({
                     handleLogin={handleLogin}
                     inputValue={inputValue}
                     setInputValue={setInputValue}
-                    passwordValue={passwordValue}
-                    setPasswordValue={setPasswordValue}
                     isLoading={isLoading}
                     setIsLoading={setIsLoading}
                 />
