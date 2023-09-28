@@ -8,8 +8,6 @@ import '../assets/styles/components/input.scss'
 export default function Input({
     inputValue,
     setInputValue,
-    passwordValue,
-    setPasswordValue,
     isPassword,
     placeholderValue,
     errorMessage,
@@ -19,10 +17,24 @@ export default function Input({
 
     const HandleChangeInput = (e) => {
         errorMessage ? setErrorMessage(false) : null
+        const { value } = e.target
 
-        isPassword
-            ? setPasswordValue(e.target.value)
-            : setInputValue(e.target.value)
+        switch (location.pathname) {
+            case '/login':
+                if (isPassword) {
+                    setInputValue((prevInputValue) => ({
+                        ...prevInputValue,
+                        Password: value,
+                    }))
+                } else {
+                    setInputValue((prevInputValue) => ({
+                        ...prevInputValue,
+                        Username: value,
+                    }))
+                }
+                break
+            default:
+        }
     }
 
     return (
@@ -34,7 +46,11 @@ export default function Input({
                         <Form.Control
                             type={isPassword ? 'password' : 'text'}
                             placeholder={isPassword ? 'Password' : 'Username'}
-                            value={isPassword ? passwordValue : inputValue}
+                            value={
+                                isPassword
+                                    ? inputValue.Password
+                                    : inputValue.Username
+                            }
                             onChange={HandleChangeInput}
                         />
                     </InputGroup>

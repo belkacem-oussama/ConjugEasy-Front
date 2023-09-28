@@ -5,11 +5,11 @@ import Button from '../components/Button.jsx'
 
 import '../assets/styles/pages/sequence.scss'
 
-export default function Sequence() {
+export default function Sequence({ inputValue, setInputValue }) {
     return (
         <div className="sequence-container">
             <div className="sequence-container-page">
-                <Square />
+                <Square inputValue={inputValue} setInputValue={setInputValue} />
             </div>
             <Link to="/result">
                 <Button color="primary" text="J'ai fini !" />

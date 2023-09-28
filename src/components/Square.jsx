@@ -16,8 +16,6 @@ export default function Square({
     handleLogin,
     inputValue,
     setInputValue,
-    passwordValue,
-    setPasswordValue,
     errorMessage,
     setErrorMessage,
     isLoading,
@@ -39,13 +37,12 @@ export default function Square({
                         setErrorMessage={setErrorMessage}
                     />
                     <Input
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
                         isPassword
-                        passwordValue={passwordValue}
-                        setPasswordValue={setPasswordValue}
                         errorMessage={errorMessage}
                         setErrorMessage={setErrorMessage}
                     />
-                    {}
                     {isLoading ? (
                         <LoaderComponent />
                     ) : (
@@ -63,7 +60,10 @@ export default function Square({
             )}
             {location.pathname === '/sequence' ? (
                 <div className="square-tablet-sequence">
-                    <Text />
+                    <Text
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
             ) : (
                 ''
