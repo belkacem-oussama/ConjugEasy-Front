@@ -91,10 +91,32 @@ export default function App() {
         navigate('/bye-bye')
     }
 
+    const handleVerbsScore = () => {
+        let StateInputValue = inputValue.Answers
+        let GoodVerbs = JSON.parse(localStorage.getItem('goodConjug'))
+        console.log(StateInputValue, GoodVerbs)
+
+        if (StateInputValue.length !== GoodVerbs.length) {
+            console.log("Les tableaux n'ont pas la même longueur")
+            return
+        }
+
+        let positiveCounter = 0
+
+        for (let x = 0; x < StateInputValue.length; ++x) {
+            if (StateInputValue[x] === GoodVerbs[x]) {
+                positiveCounter++
+            } else {
+                console.log('no')
+            }
+        }
+    }
+
     const handleFormSubmit = () => {
         switch (location.pathname) {
             case '/sequence':
                 console.log(inputValue.Answers)
+                handleVerbsScore()
                 break
 
             default:

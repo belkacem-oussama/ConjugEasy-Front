@@ -3,10 +3,23 @@ import Input from './Input.jsx'
 import '../assets/styles/components/text.scss'
 
 import text from '../assets/json/text.json'
+import goodConjug from '../assets/json/text.json'
 
 export default function Text({ inputValue, setInputValue }) {
+    //SET GOOD VERB'S CONJUG IN LS
+    localStorage.setItem(
+        'goodConjug',
+        JSON.stringify(goodConjug['words-good-conjug'])
+    )
+
+    // GOOD VERB'S CONJUG
+    const goodVerbs = JSON.parse(localStorage.getItem('goodConjug'))
+
+    // MANAGE TEXT'S DISPLAY WITH INPUT
     const wordsToReplace = text.words.filter((word) => text.text.includes(word))
     const splittedText = text.text.split(' ')
+
+    // MANAGE INPUT'S VALUES
     let wordIndex = []
 
     const displayText = splittedText.map((word, index) => {
