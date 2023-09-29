@@ -16,13 +16,34 @@ export default function Square({
     handleLogin,
     inputValue,
     setInputValue,
-    passwordValue,
-    setPasswordValue,
     errorMessage,
     setErrorMessage,
     isLoading,
 }) {
     const location = useLocation()
+    const goodScore = parseInt(localStorage.getItem('positive-counter'))
+
+    let textToDisplay
+
+    switch (goodScore) {
+        case 5:
+        case 4:
+            textToDisplay = 'Bravo ! Très bonne note, continue ainsi !'
+            break
+        case 3:
+            textToDisplay =
+                'Continue, ne lâche pas tes efforts, tu es sur la bonne voie !'
+            break
+        case 2:
+        case 1:
+            textToDisplay = 'Il faut réviser, allez, au boulot !'
+            break
+        case 0:
+            textToDisplay = 'Houston, on a un problème...'
+            break
+        default:
+    }
+
     return (
         <>
             {location.pathname === '/login' ? (
@@ -39,13 +60,12 @@ export default function Square({
                         setErrorMessage={setErrorMessage}
                     />
                     <Input
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
                         isPassword
-                        passwordValue={passwordValue}
-                        setPasswordValue={setPasswordValue}
                         errorMessage={errorMessage}
                         setErrorMessage={setErrorMessage}
                     />
-                    {}
                     {isLoading ? (
                         <LoaderComponent />
                     ) : (
@@ -63,7 +83,10 @@ export default function Square({
             )}
             {location.pathname === '/sequence' ? (
                 <div className="square-tablet-sequence">
-                    <Text />
+                    <Text
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
             ) : (
                 ''
@@ -71,8 +94,8 @@ export default function Square({
             {location.pathname === '/result' ? (
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
-                    <h2>3/5</h2>
-                    <p>{text.score}</p>
+                    <h2>{goodScore}/5</h2>
+                    <p>{textToDisplay}</p>
                 </div>
             ) : (
                 ''

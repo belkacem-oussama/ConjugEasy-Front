@@ -18,8 +18,13 @@ import users from '../src/assets/json/user.json'
 import './assets/styles/main.scss'
 
 export default function App() {
-    const [inputValue, setInputValue] = useState('')
-    const [passwordValue, setPasswordValue] = useState('')
+    const initialValues = {
+        Username: '',
+        Password: '',
+        Answers: ['', '', '', '', ''],
+    }
+
+    const [inputValue, setInputValue] = useState(initialValues)
     const [isLogged, setIsLogged] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -46,8 +51,8 @@ export default function App() {
 
     const handleLogin = async () => {
         try {
-            const login = inputValue
-            const password = passwordValue
+            const login = inputValue.Username
+            const password = inputValue.Password
 
             setIsLoading(true)
 
@@ -86,6 +91,40 @@ export default function App() {
         navigate('/bye-bye')
     }
 
+    const handleVerbsScore = () => {
+        let StateInputValue = inputValue.Answers
+        let GoodVerbs = JSON.parse(localStorage.getItem('goodConjug'))
+
+        if (StateInputValue.length !== GoodVerbs.length) {
+            console.log("Les tableaux n'ont pas la même longueur")
+            return
+        }
+
+        let positiveCounter = 0
+        let errorVerbsInput = []
+        let errorVerbs = []
+
+        for (let x = 0; x < StateInputValue.length; ++x) {
+            if (StateInputValue[x] === GoodVerbs[x]) {
+                positiveCounter++
+            } else {
+                errorVerbsInput.push(StateInputValue[x])
+                errorVerbs.push(GoodVerbs[x])
+            }
+        }
+        localStorage.setItem('positive-counter', positiveCounter)
+    }
+
+    const handleFormSubmit = () => {
+        switch (location.pathname) {
+            case '/sequence':
+                handleVerbsScore()
+                break
+
+            default:
+        }
+    }
+
     return (
         <React.Fragment>
             {location.pathname !== '/' && location.pathname !== '/login' && (
@@ -102,8 +141,6 @@ export default function App() {
                         <Login
                             inputValue={inputValue}
                             setInputValue={setInputValue}
-                            passwordValue={passwordValue}
-                            setPasswordValue={setPasswordValue}
                             isLogged={isLogged}
                             setIsLogged={setIsLogged}
                             errorMessage={errorMessage}
@@ -130,7 +167,16 @@ export default function App() {
                     <Route path="/personal/add" element={<Add />} />
                 )}
                 <Route path="/start" element={<Start />} />
-                <Route path="/sequence" element={<Sequence />} />
+                <Route
+                    path="/sequence"
+                    element={
+                        <Sequence
+                            inputValue={inputValue}
+                            setInputValue={setInputValue}
+                            handleFormSubmit={handleFormSubmit}
+                        />
+                    }
+                />
                 <Route path="/result" element={<Result />} />
                 <Route path="/board" element={<Board />} />
                 <Route path="/bye-bye" element={<Bye />} />

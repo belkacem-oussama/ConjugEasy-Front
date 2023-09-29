@@ -8,20 +8,58 @@ import '../assets/styles/components/input.scss'
 export default function Input({
     inputValue,
     setInputValue,
-    passwordValue,
-    setPasswordValue,
     isPassword,
     placeholderValue,
     errorMessage,
     setErrorMessage,
+    index,
 }) {
     const location = useLocation()
+    const wordIndex = localStorage.getItem('word-index')
+    const regex = /"([^"]+)"/g
+    const verbes = []
+    let match
+
+    while ((match = regex.exec(wordIndex))) {
+        verbes.push(match[1])
+    }
 
     const HandleChangeInput = (e) => {
-        setErrorMessage(false)
-        isPassword
-            ? setPasswordValue(e.target.value)
-            : setInputValue(e.target.value)
+        errorMessage ? setErrorMessage(false) : null
+        const { value } = e.target
+
+        switch (location.pathname) {
+            case '/login':
+                if (isPassword) {
+                    setInputValue((prevInputValue) => ({
+                        ...prevInputValue,
+                        Password: value,
+                    }))
+                } else {
+                    setInputValue((prevInputValue) => ({
+                        ...prevInputValue,
+                        Username: value,
+                    }))
+                }
+                break
+
+            case '/sequence':
+                const placeholderInput = e.target.placeholder
+                const inputValueIndex = verbes.indexOf(placeholderInput)
+
+                if (inputValueIndex !== -1) {
+                    setInputValue((prevInputValue) => {
+                        const updatedAnswers = [...prevInputValue.Answers]
+                        updatedAnswers[inputValueIndex] = e.target.value
+                        return {
+                            ...prevInputValue,
+                            Answers: updatedAnswers,
+                        }
+                    })
+                }
+                break
+            default:
+        }
     }
 
     return (
@@ -33,7 +71,11 @@ export default function Input({
                         <Form.Control
                             type={isPassword ? 'password' : 'text'}
                             placeholder={isPassword ? 'Password' : 'Username'}
-                            value={isPassword ? passwordValue : inputValue}
+                            value={
+                                isPassword
+                                    ? inputValue.Password
+                                    : inputValue.Username
+                            }
                             onChange={HandleChangeInput}
                         />
                     </InputGroup>
@@ -42,11 +84,11 @@ export default function Input({
 
             {location.pathname === '/sequence' && (
                 <>
-                    <span className="input-component-sequence">
+                    <span className="input-component-sequence" index={index}>
                         <Form.Control
                             type="text"
                             placeholder={placeholderValue}
-                            value={isPassword ? passwordValue : inputValue}
+                            value={inputValue.Answers[index]}
                             onChange={HandleChangeInput}
                         />
                     </span>
