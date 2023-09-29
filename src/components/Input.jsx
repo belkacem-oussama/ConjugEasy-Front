@@ -88,13 +88,7 @@ export default function Input({
                         <Form.Control
                             type="text"
                             placeholder={placeholderValue}
-                            value={
-                                (inputValue.FifthAnswer,
-                                inputValue.SecondAnswer,
-                                inputValue.ThirdAnswer,
-                                inputValue.FourthAnswer,
-                                inputValue.FifthAnswer)
-                            }
+                            value={inputValue.Answers[index]}
                             onChange={HandleChangeInput}
                         />
                     </span>
