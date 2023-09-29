@@ -113,7 +113,6 @@ export default function App() {
                 errorVerbs.push(GoodVerbs[x])
             }
         }
-        console.log(positiveCounter, errorVerbsInput, errorVerbs)
     }
 
     const handleFormSubmit = () => {
