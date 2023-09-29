@@ -94,7 +94,7 @@ export default function Square({
             {location.pathname === '/result' ? (
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
-                    {goodScore ? (
+                    {goodScore !== null ? (
                         <h2>{goodScore}/5</h2>
                     ) : (
                         <h2>Oups...une erreur est survenue</h2>
