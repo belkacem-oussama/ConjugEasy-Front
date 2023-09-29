@@ -12,8 +12,17 @@ export default function Input({
     placeholderValue,
     errorMessage,
     setErrorMessage,
+    index,
 }) {
     const location = useLocation()
+    const wordIndex = localStorage.getItem('word-index')
+    const regex = /"([^"]+)"/g
+    const verbes = []
+    let match
+
+    while ((match = regex.exec(wordIndex))) {
+        verbes.push(match[1])
+    }
 
     const HandleChangeInput = (e) => {
         errorMessage ? setErrorMessage(false) : null
@@ -31,6 +40,22 @@ export default function Input({
                         ...prevInputValue,
                         Username: value,
                     }))
+                }
+                break
+
+            case '/sequence':
+                const placeholderInput = e.target.placeholder
+                const inputValueIndex = verbes.indexOf(placeholderInput)
+
+                if (inputValueIndex !== -1) {
+                    setInputValue((prevInputValue) => {
+                        const updatedAnswers = [...prevInputValue.Answers]
+                        updatedAnswers[inputValueIndex] = e.target.value
+                        return {
+                            ...prevInputValue,
+                            Answers: updatedAnswers,
+                        }
+                    })
                 }
                 break
             default:
@@ -59,11 +84,17 @@ export default function Input({
 
             {location.pathname === '/sequence' && (
                 <>
-                    <span className="input-component-sequence">
+                    <span className="input-component-sequence" index={index}>
                         <Form.Control
                             type="text"
                             placeholder={placeholderValue}
-                            value={isPassword ? passwordValue : inputValue}
+                            value={
+                                (inputValue.FifthAnswer,
+                                inputValue.SecondAnswer,
+                                inputValue.ThirdAnswer,
+                                inputValue.FourthAnswer,
+                                inputValue.FifthAnswer)
+                            }
                             onChange={HandleChangeInput}
                         />
                     </span>

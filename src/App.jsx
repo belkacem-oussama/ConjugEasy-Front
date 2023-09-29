@@ -21,11 +21,7 @@ export default function App() {
     const initialValues = {
         Username: '',
         Password: '',
-        FirstAnswer: '',
-        SecondAnswer: '',
-        ThirdAnswer: '',
-        FourthAnswer: '',
-        FifthAnswer: '',
+        Answers: ['', '', '', '', ''],
     }
 
     const [inputValue, setInputValue] = useState(initialValues)
