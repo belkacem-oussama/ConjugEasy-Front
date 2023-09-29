@@ -112,6 +112,7 @@ export default function App() {
                 errorVerbs.push(GoodVerbs[x])
             }
         }
+        localStorage.setItem('positive-counter', positiveCounter)
     }
 
     const handleFormSubmit = () => {

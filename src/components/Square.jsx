@@ -21,6 +21,8 @@ export default function Square({
     isLoading,
 }) {
     const location = useLocation()
+    const goodScore = localStorage.getItem('positive-counter')
+
     return (
         <>
             {location.pathname === '/login' ? (
@@ -71,7 +73,7 @@ export default function Square({
             {location.pathname === '/result' ? (
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
-                    <h2>3/5</h2>
+                    <h2>{goodScore}/5</h2>
                     <p>{text.score}</p>
                 </div>
             ) : (
