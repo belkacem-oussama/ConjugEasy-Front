@@ -91,6 +91,16 @@ export default function App() {
         navigate('/bye-bye')
     }
 
+    const handleFormSubmit = () => {
+        switch (location.pathname) {
+            case '/sequence':
+                console.log(inputValue.Answers)
+                break
+
+            default:
+        }
+    }
+
     return (
         <React.Fragment>
             {location.pathname !== '/' && location.pathname !== '/login' && (
@@ -139,6 +149,7 @@ export default function App() {
                         <Sequence
                             inputValue={inputValue}
                             setInputValue={setInputValue}
+                            handleFormSubmit={handleFormSubmit}
                         />
                     }
                 />
