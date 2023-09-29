@@ -94,7 +94,6 @@ export default function App() {
     const handleVerbsScore = () => {
         let StateInputValue = inputValue.Answers
         let GoodVerbs = JSON.parse(localStorage.getItem('goodConjug'))
-        console.log(StateInputValue, GoodVerbs)
 
         if (StateInputValue.length !== GoodVerbs.length) {
             console.log("Les tableaux n'ont pas la même longueur")
