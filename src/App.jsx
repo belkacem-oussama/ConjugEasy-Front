@@ -102,14 +102,18 @@ export default function App() {
         }
 
         let positiveCounter = 0
+        let errorVerbsInput = []
+        let errorVerbs = []
 
         for (let x = 0; x < StateInputValue.length; ++x) {
             if (StateInputValue[x] === GoodVerbs[x]) {
                 positiveCounter++
             } else {
-                console.log('no')
+                errorVerbsInput.push(StateInputValue[x])
+                errorVerbs.push(GoodVerbs[x])
             }
         }
+        console.log(positiveCounter, errorVerbsInput, errorVerbs)
     }
 
     const handleFormSubmit = () => {
