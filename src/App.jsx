@@ -118,7 +118,6 @@ export default function App() {
     const handleFormSubmit = () => {
         switch (location.pathname) {
             case '/sequence':
-                console.log(inputValue.Answers)
                 handleVerbsScore()
                 break
 

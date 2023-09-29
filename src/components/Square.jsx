@@ -21,7 +21,28 @@ export default function Square({
     isLoading,
 }) {
     const location = useLocation()
-    const goodScore = localStorage.getItem('positive-counter')
+    const goodScore = parseInt(localStorage.getItem('positive-counter'))
+
+    let textToDisplay
+
+    switch (goodScore) {
+        case 5:
+        case 4:
+            textToDisplay = 'Bravo ! Très bonne note, continue ainsi !'
+            break
+        case 3:
+            textToDisplay =
+                'Continue, ne lâche pas tes efforts, tu es sur la bonne voie !'
+            break
+        case 2:
+        case 1:
+            textToDisplay = 'Il faut réviser, allez, au boulot !'
+            break
+        case 0:
+            textToDisplay = 'Houston, on a un problème...'
+            break
+        default:
+    }
 
     return (
         <>
@@ -74,7 +95,7 @@ export default function Square({
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
                     <h2>{goodScore}/5</h2>
-                    <p>{text.score}</p>
+                    <p>{textToDisplay}</p>
                 </div>
             ) : (
                 ''
