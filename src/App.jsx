@@ -28,6 +28,7 @@ export default function App() {
     const [isLogged, setIsLogged] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+    const [isExam, setIsExam] = useState(true)
 
     const userRoles = localStorage.getItem('user-role')
     const logged = localStorage.getItem('isLogged')
@@ -174,6 +175,8 @@ export default function App() {
                             inputValue={inputValue}
                             setInputValue={setInputValue}
                             handleFormSubmit={handleFormSubmit}
+                            isExam={isExam}
+                            setIsExam={setIsExam}
                         />
                     }
                 />

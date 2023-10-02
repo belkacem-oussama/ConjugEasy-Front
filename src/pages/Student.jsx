@@ -17,7 +17,7 @@ import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png
 
 export default function Student({ handleLogout }) {
     const [passedExercices, setPassedExercices] = useState(0)
-    const [readyToExam, setReadyToExam] = useState(true)
+    const [readyToExam, setReadyToExam] = useState(false)
     const [currentBelt, setCurrentBelt] = useState('PurpleBelt')
 
     const beltInfo = {
