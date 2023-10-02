@@ -28,7 +28,7 @@ export default function App() {
     const [isLogged, setIsLogged] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
-    const [isExam, setIsExam] = useState(true)
+    const [isExam, setIsExam] = useState(false)
 
     const userRoles = localStorage.getItem('user-role')
     const logged = localStorage.getItem('isLogged')
