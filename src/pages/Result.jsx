@@ -20,6 +20,10 @@ export default function Result() {
         'Passer la ceinture noire',
     ]
 
+    const handleRemoveCounter = () => {
+        localStorage.removeItem('positive-counter')
+    }
+
     return (
         <div className="result">
             <div className="result-container">
@@ -33,6 +37,7 @@ export default function Result() {
                                 color="primary"
                                 text={textButton[0]}
                                 img={ConjugEasyExercice}
+                                onClick={handleRemoveCounter}
                             />
                         </Link>
                         <Link to="/board">
@@ -40,6 +45,7 @@ export default function Result() {
                                 color="primary"
                                 text={textButton[1]}
                                 img={ConjugEasyResult}
+                                onClick={handleRemoveCounter}
                             />
                         </Link>
                     </div>
@@ -54,6 +60,7 @@ export default function Result() {
                                     color="primary"
                                     text={textButton[2]}
                                     img={ConjugEasyHome}
+                                    onClick={handleRemoveCounter}
                                 />
                             </Link>
                         )}
