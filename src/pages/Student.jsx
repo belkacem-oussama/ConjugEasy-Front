@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import Button from '../components/Button.jsx'
 
-//IMPORT PICS
+// IMPORT PICS
 import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 import ConjugEasyLogout from '../assets/images/logo/ConjugEasy_Logout.png'
 import ConjugEasyTraining from '../assets/images/logo/ConjugEasy_Training.png'
 
-//IMPORT BELTS
+// IMPORT BELTS
 import ConjugEasyBlackBelt from '../assets/images/belts/ConjugEasy_BlackBelt.png'
 import ConjugEasyBrownBelt from '../assets/images/belts/ConjugEasy_BrownBelt.png'
 import ConjugEasyPurpleBelt from '../assets/images/belts/ConjugEasy_PurpleBelt.png'
@@ -18,46 +17,44 @@ import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png
 
 export default function Student({ handleLogout }) {
     const [passedExercices, setPassedExercices] = useState(0)
-    const [readyToExam, setReadyToExam] = useState(false)
-    const [currentBelt, setCurrentBelt] = useState('WhiteBelt')
+    const [readyToExam, setReadyToExam] = useState(true)
+    const [currentBelt, setCurrentBelt] = useState('PurpleBelt')
+
+    const beltInfo = {
+        WhiteBelt: {
+            beltToDisplay: ConjugEasyWhiteBelt,
+            nextBelt: ConjugEasyBlueBelt,
+            nextBeltText: 'bleue',
+        },
+        BlueBelt: {
+            beltToDisplay: ConjugEasyBlueBelt,
+            nextBelt: ConjugEasyPurpleBelt,
+            nextBeltText: 'violette',
+        },
+        PurpleBelt: {
+            beltToDisplay: ConjugEasyPurpleBelt,
+            nextBelt: ConjugEasyBrownBelt,
+            nextBeltText: 'marron',
+        },
+        BrownBelt: {
+            beltToDisplay: ConjugEasyBrownBelt,
+            nextBelt: ConjugEasyBlackBelt,
+            nextBeltText: 'noire',
+        },
+        BlackBelt: {
+            beltToDisplay: ConjugEasyBlackBelt,
+            nextBelt: null,
+            nextBeltText: null,
+        },
+    }
 
     const textButton = [
-        'Je passe la ceinture noire',
+        `Je passe la ceinture ${beltInfo[currentBelt].nextBeltText}`,
         "Je m'entraîne",
         'Je consulte mes résultats',
         "Je m'exerce",
         'Se déconnecter',
     ]
-
-    const beltOrder = {
-        1: 'White',
-        2: 'Blue',
-        3: 'Purple',
-        4: 'Brown',
-        5: 'Black',
-    }
-
-    let beltToDisplay = ''
-
-    switch (currentBelt) {
-        case 'WhiteBelt':
-            beltToDisplay = ConjugEasyWhiteBelt
-            break
-        case 'BlueBelt':
-            beltToDisplay = ConjugEasyBlueBelt
-            break
-        case 'PurpleBelt':
-            beltToDisplay = ConjugEasyPurpleBelt
-            break
-        case 'BrownBelt':
-            beltToDisplay = ConjugEasyBrownBelt
-            break
-        case 'BlackBelt':
-            beltToDisplay = ConjugEasyBlackBelt
-            break
-        default:
-            break
-    }
 
     const userName = localStorage.getItem('user-name')
     const userSurname = localStorage.getItem('user-surname')
@@ -69,14 +66,18 @@ export default function Student({ handleLogout }) {
                 aujourd'hui ?
             </p>
             <p>Ceinture actuelle :</p>
-            <img src={beltToDisplay} id="belt" />
+            <img src={beltInfo[currentBelt].beltToDisplay} id="belt" />
             <div className="personal-space-container-main">
                 <div className="personal-space-container-main-top">
                     <Link to="/start">
                         <Button
                             color="primary"
                             text={readyToExam ? textButton[0] : textButton[1]}
-                            img={readyToExam ? undefined : ConjugEasyTraining}
+                            img={
+                                readyToExam
+                                    ? beltInfo[currentBelt].nextBelt
+                                    : ConjugEasyTraining
+                            }
                         />
                     </Link>
                     <Link to="/board">
