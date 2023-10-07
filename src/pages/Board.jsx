@@ -7,8 +7,6 @@ import Button from '../components/Button.jsx'
 
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 
-import '../assets/styles/pages/board.scss'
-
 export default function Board() {
     return (
         <div className="board-page">

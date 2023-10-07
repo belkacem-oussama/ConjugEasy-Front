@@ -8,8 +8,6 @@ import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 
-import '../assets/styles/pages/result.scss'
-
 export default function Result() {
     const [readyForTest, setReadyForTest] = useState(false)
 

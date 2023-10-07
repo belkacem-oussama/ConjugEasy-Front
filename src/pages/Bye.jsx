@@ -5,8 +5,6 @@ import Button from '../components/Button.jsx'
 import ConjugEasyBye from '../assets/images/bye/ConjugEasy_Bye.png'
 import ConjugEasyHome from '../assets/images/home/ConjugEasy_Cahier.png'
 
-import '../assets/styles/pages/bye.scss'
-
 export default function Bye() {
     return (
         <div className="bye-page">

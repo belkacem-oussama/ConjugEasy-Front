@@ -3,8 +3,6 @@ import { useLocation } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-import '../assets/styles/components/input.scss'
-
 export default function Input({
     inputValue,
     setInputValue,

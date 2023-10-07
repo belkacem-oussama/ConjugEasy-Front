@@ -1,7 +1,5 @@
 import Input from './Input.jsx'
 
-import '../assets/styles/components/text.scss'
-
 import text from '../assets/json/text.json'
 import goodConjug from '../assets/json/text.json'
 
