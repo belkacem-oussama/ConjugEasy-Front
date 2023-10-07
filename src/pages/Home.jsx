@@ -5,8 +5,6 @@ import Button from '../components/Button.jsx'
 import ConjugEasyTitle from '.././assets/images/home/ConjugEasy.png'
 import ConjugEasyCahier from '.././assets/images/home/ConjugEasy_Cahier.png'
 
-import '.././assets/styles/pages/home.scss'
-
 export default function Home({ handleLogout }) {
     const ButtonsText = [
         'Élève',

@@ -15,7 +15,7 @@ import Add from './pages/Add.jsx'
 
 import users from '../src/assets/json/user.json'
 
-import './assets/styles/main.scss'
+import './assets/styles/import.scss'
 
 export default function App() {
     const initialValues = {

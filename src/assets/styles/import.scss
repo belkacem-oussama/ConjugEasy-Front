@@ -1,0 +1,28 @@
+//MAIN
+@import '../styles/main.scss';
+
+//LAYOUTS
+@import '../styles/layouts/header.scss';
+@import '../styles/layouts/footer.scss';
+
+//IMAGES
+@import '../styles/images/belt.scss';
+@import '../styles/images/logo.scss';
+
+// COMPONENTS
+@import '../styles/components/button.scss';
+@import '../styles/components/input.scss';
+@import '../styles/components/loader.scss';
+@import '../styles/components/square.scss';
+@import '../styles/components/text.scss';
+
+//PAGES
+@import '../styles/pages/add.scss';
+@import '../styles/pages/board.scss';
+@import '../styles/pages/bye.scss';
+@import '../styles/pages/home.scss';
+@import '../styles/pages/login.scss';
+@import '../styles/pages/personal-space.scss';
+@import '../styles/pages/result.scss';
+@import '../styles/pages/sequence.scss';
+@import '../styles/pages/start.scss';
