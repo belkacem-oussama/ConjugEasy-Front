@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom'
 
 import ConjugEasyTop from '../assets/images/layouts/ConjugEasy_Top.png'
 
-import '../assets/styles/layouts/header.scss'
-
 export default function Header() {
     return (
         <div className="header">

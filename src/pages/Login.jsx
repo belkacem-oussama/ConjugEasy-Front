@@ -4,8 +4,6 @@ import Square from '../components/Square.jsx'
 
 import ConjugEasyLogo from '../assets/images/home/ConjugEasy.png'
 
-import '../assets/styles/pages/login.scss'
-
 export default function Login({
     inputValue,
     setInputValue,

@@ -2,8 +2,6 @@ import { useLocation } from 'react-router-dom'
 
 import ConjugEasyFooter from '../assets/images/layouts/ConjugEasy_Bag.png'
 
-import '../assets/styles/layouts/footer.scss'
-
 export default function Footer() {
     const location = useLocation()
     return (
