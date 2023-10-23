@@ -10,14 +10,14 @@ interface ButtonProps {
     onClick: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
     color,
     text,
     size,
     img,
     error,
     onClick,
-}) => {
+}: ButtonProps) {
     const location = useLocation()
 
     const getButtonStyle = () => {
@@ -69,5 +69,3 @@ const Button: React.FC<ButtonProps> = ({
         </button>
     )
 }
-
-export default Button
