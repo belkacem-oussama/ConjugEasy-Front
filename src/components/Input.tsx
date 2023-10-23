@@ -16,7 +16,7 @@ interface InputProps {
     index: number
 }
 
-const Input: React.FC<InputProps> = ({
+export default function Input({
     inputValue,
     setInputValue,
     isPassword,
@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({
     errorMessage,
     setErrorMessage,
     index,
-}) => {
+}: InputProps) {
     const location = useLocation()
     const wordIndex = localStorage.getItem('word-index')
     const regex = /"([^"]+)"/g
@@ -110,5 +110,3 @@ const Input: React.FC<InputProps> = ({
         </>
     )
 }
-
-export default Input
