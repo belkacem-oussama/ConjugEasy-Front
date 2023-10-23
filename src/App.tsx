@@ -17,31 +17,51 @@ import users from './assets/json/user.json'
 
 import './assets/styles/import.scss'
 
+//TS Interface
+interface InitialValuesInterface {
+    Username: string
+    Password: string
+    Answers: string[]
+}
+
+interface LoggedUserInterface {
+    id: number
+    login: string
+    mdp: string
+    name: string
+    role: string
+    surname: string
+}
+
+//END Interface
+
 export default function App() {
-    const initialValues = {
+    const initialValues: InitialValuesInterface = {
         Username: '',
         Password: '',
         Answers: ['', '', '', '', ''],
     }
 
-    const [inputValue, setInputValue] = useState(initialValues)
-    const [isLogged, setIsLogged] = useState(false)
-    const [errorMessage, setErrorMessage] = useState(false)
-    const [isLoading, setIsLoading] = useState(false)
+    const [inputValue, setInputValue] =
+        useState<InitialValuesInterface>(initialValues)
 
-    const userRoles = localStorage.getItem('user-role')
-    const logged = localStorage.getItem('isLogged')
+    const [isLogged, setIsLogged] = useState<boolean>(false)
+    const [errorMessage, setErrorMessage] = useState<boolean>(false)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    const userRoles: string | null = localStorage.getItem('user-role')
+    const logged: string | null = localStorage.getItem('isLogged')
 
     const location = useLocation()
     const navigate = useNavigate()
 
-    const handleFailedAuth = () => {
+    const handleFailedAuth = (): void => {
         navigate('/login')
         setIsLoading(false)
         setErrorMessage(true)
     }
 
-    const handleSuccessfullAuth = () => {
+    const handleSuccessfullAuth = (): void => {
         setIsLogged(true)
         setErrorMessage(false)
         setIsLoading(false)
@@ -49,14 +69,14 @@ export default function App() {
         navigate('/personal')
     }
 
-    const handleLogin = async () => {
+    const handleLogin = async (): Promise<void> => {
         try {
-            const login = inputValue.Username
-            const password = inputValue.Password
+            const login: string = inputValue.Username
+            const password: string = inputValue.Password
 
             setIsLoading(true)
 
-            const loggedUser = users.find(
+            const loggedUser: LoggedUserInterface | undefined = users.find(
                 (user) => user.login === login && user.mdp === password
             )
 
@@ -65,15 +85,18 @@ export default function App() {
                     handleSuccessfullAuth()
                 }, 3000)
 
-                const username = localStorage.setItem(
+                const username: void = localStorage.setItem(
                     'user-name',
                     loggedUser.name
                 )
-                const surname = localStorage.setItem(
+                const surname: void = localStorage.setItem(
                     'user-surname',
                     loggedUser.surname
                 )
-                const role = localStorage.setItem('user-role', loggedUser.role)
+                const role: void = localStorage.setItem(
+                    'user-role',
+                    loggedUser.role
+                )
             } else {
                 handleFailedAuth()
             }
@@ -85,24 +108,29 @@ export default function App() {
         }
     }
 
-    const handleLogout = () => {
+    const handleLogout = (): void => {
         setIsLogged(false)
         localStorage.clear()
         navigate('/bye-bye')
     }
 
-    const handleVerbsScore = () => {
-        let StateInputValue = inputValue.Answers
-        let GoodVerbs = JSON.parse(localStorage.getItem('goodConjug'))
+    const handleVerbsScore = (): void => {
+        let StateInputValue: string[] = inputValue.Answers
+        let GoodVerbs: any = null
+
+        const localStorageData = localStorage.getItem('goodConjug')
+        if (localStorageData !== null) {
+            GoodVerbs = JSON.parse(localStorageData)
+        }
 
         if (StateInputValue.length !== GoodVerbs.length) {
             console.log("Les tableaux n'ont pas la même longueur")
             return
         }
 
-        let positiveCounter = 0
-        let errorVerbsInput = []
-        let errorVerbs = []
+        let positiveCounter: number = 0
+        let errorVerbsInput: string[] = []
+        let errorVerbs: string[] = []
 
         for (let x = 0; x < StateInputValue.length; ++x) {
             if (StateInputValue[x] === GoodVerbs[x]) {
@@ -112,10 +140,11 @@ export default function App() {
                 errorVerbs.push(GoodVerbs[x])
             }
         }
-        localStorage.setItem('positive-counter', positiveCounter)
+
+        localStorage.setItem('positive-counter', positiveCounter.toString())
     }
 
-    const handleFormSubmit = () => {
+    const handleFormSubmit = (): void => {
         switch (location.pathname) {
             case '/sequence':
                 handleVerbsScore()
@@ -141,8 +170,6 @@ export default function App() {
                         <Login
                             inputValue={inputValue}
                             setInputValue={setInputValue}
-                            isLogged={isLogged}
-                            setIsLogged={setIsLogged}
                             errorMessage={errorMessage}
                             setErrorMessage={setErrorMessage}
                             handleLogin={handleLogin}
@@ -156,7 +183,6 @@ export default function App() {
                         path="/personal"
                         element={
                             <PersonalSpace
-                                isLogged={isLogged}
                                 handleLogout={handleLogout}
                                 setIsLogged={setIsLogged}
                             />
