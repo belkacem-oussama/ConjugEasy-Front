@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.jsx'
+import Square from '../components/Square.js'
 
 import ConjugEasyLogo from '../assets/images/home/ConjugEasy.png'
 

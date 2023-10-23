@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.jsx'
-import LineChart from '../components/Line.jsx'
-import DoughnutChart from '../components/Doughnut.jsx'
-import Button from '../components/Button.jsx'
+import Square from '../components/Square.js'
+import LineChart from '../components/Line.js'
+import DoughnutChart from '../components/Doughnut.js'
+import Button from '../components/Button.js'
 
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 
