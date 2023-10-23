@@ -18,7 +18,7 @@ import users from './assets/json/user.json'
 import './assets/styles/import.scss'
 
 //TS Interface
-interface InitialValuesInterface {
+export interface InitialValuesInterface {
     Username: string
     Password: string
     Answers: string[]
