@@ -1,9 +1,22 @@
+import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-export default function Input({
+import { InitialValuesInterface } from '../App.js'
+
+interface InputProps {
+    inputValue: InitialValuesInterface
+    setInputValue: void
+    isPassword: boolean
+    placeholderValue: string
+    errorMessage: string
+    setErrorMessage: (value: boolean) => void
+    index: number
+}
+
+const Input: React.FC<InputProps> = ({
     inputValue,
     setInputValue,
     isPassword,
@@ -11,18 +24,20 @@ export default function Input({
     errorMessage,
     setErrorMessage,
     index,
-}) {
+}) => {
     const location = useLocation()
     const wordIndex = localStorage.getItem('word-index')
     const regex = /"([^"]+)"/g
-    const verbes = []
+    const verbes: string[] = []
     let match
 
-    while ((match = regex.exec(wordIndex))) {
-        verbes.push(match[1])
+    if (wordIndex !== null) {
+        while ((match = regex.exec(wordIndex))) {
+            verbes.push(match[1])
+        }
     }
 
-    const HandleChangeInput = (e) => {
+    const HandleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         errorMessage ? setErrorMessage(false) : null
         const { value } = e.target
 
@@ -95,3 +110,5 @@ export default function Input({
         </>
     )
 }
+
+export default Input
