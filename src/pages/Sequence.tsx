@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.jsx'
-import Button from '../components/Button.jsx'
+import Square from '../components/Square.js'
+import Button from '../components/Button.js'
 
 export default function Sequence({
     inputValue,

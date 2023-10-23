@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import Button from '../components/Button.jsx'
+import Button from '../components/Button.js'
 
 //IMPORT PICS
 import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
