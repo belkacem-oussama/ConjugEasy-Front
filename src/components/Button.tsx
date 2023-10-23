@@ -1,7 +1,25 @@
+import React from 'react'
 import { useLocation } from 'react-router-dom'
 
-const Button = ({ color, text, size, img, error, onClick }) => {
+interface ButtonProps {
+    color: 'primary' | 'secondary'
+    text: string
+    size?: 'small'
+    img?: string
+    error?: boolean
+    onClick: () => void
+}
+
+const Button: React.FC<ButtonProps> = ({
+    color,
+    text,
+    size,
+    img,
+    error,
+    onClick,
+}) => {
     const location = useLocation()
+
     const getButtonStyle = () => {
         let styles = 'size_button '
 
@@ -28,24 +46,26 @@ const Button = ({ color, text, size, img, error, onClick }) => {
             styles += 'shake-horizontal'
         }
 
-        location.pathname === '/result' ||
-        location.pathname === '/board' ||
-        location.pathname === '/personal' ||
-        location.pathname === '/bye-bye'
-            ? (styles += 'button-result')
-            : ''
+        if (
+            location.pathname === '/result' ||
+            location.pathname === '/board' ||
+            location.pathname === '/personal' ||
+            location.pathname === '/bye-bye'
+        ) {
+            styles += 'button-result'
+        }
 
         return styles
     }
 
     return (
         <button
-            className={`${getButtonStyle()}`}
+            className={getButtonStyle()}
             id="button-component"
             onClick={onClick}
         >
             {text}
-            {img ? <img src={img} id="logo"></img> : ''}
+            {img ? <img src={img} id="logo" alt="Button Image" /> : ''}
         </button>
     )
 }
