@@ -3,7 +3,17 @@ import Input from './Input.jsx'
 import text from '../assets/json/text.json'
 import goodConjug from '../assets/json/text.json'
 
-export default function Text({ inputValue, setInputValue }) {
+import { InitialValuesInterface } from '../App.js'
+
+//START INTERFACE TS
+interface TextInterface {
+    inputValue: InitialValuesInterface
+    setInputValue: () => void
+}
+
+//END INTERFACE TS
+
+export default function Text({ inputValue, setInputValue }: TextInterface) {
     //SET GOOD VERB'S CONJUG IN LS
     localStorage.setItem(
         'goodConjug',
@@ -11,14 +21,21 @@ export default function Text({ inputValue, setInputValue }) {
     )
 
     // GOOD VERB'S CONJUG
-    const goodVerbs = JSON.parse(localStorage.getItem('goodConjug'))
+    const storedValue: string | null = localStorage.getItem('goodConjug')
+
+    if (storedValue !== null) {
+        const goodVerbs: string = JSON.parse(storedValue)
+    }
 
     // MANAGE TEXT'S DISPLAY WITH INPUT
-    const wordsToReplace = text.words.filter((word) => text.text.includes(word))
-    const splittedText = text.text.split(' ')
+    const wordsToReplace: string[] = text.words.filter((word) =>
+        text.text.includes(word)
+    )
+
+    const splittedText: string[] = text.text.split(' ')
 
     // MANAGE INPUT'S VALUES
-    let wordIndex = []
+    let wordIndex: string[] = []
 
     const displayText = splittedText.map((word, index) => {
         if (wordsToReplace.includes(word)) {
