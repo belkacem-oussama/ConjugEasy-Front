@@ -8,7 +8,7 @@ import { InitialValuesInterface } from '../App.js'
 //START INTERFACE TS
 interface TextInterface {
     inputValue: InitialValuesInterface
-    setInputValue: () => void
+    setInputValue: (newInputValue: InitialValuesInterface) => void
 }
 
 //END INTERFACE TS

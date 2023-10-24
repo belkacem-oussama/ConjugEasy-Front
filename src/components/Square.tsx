@@ -14,7 +14,7 @@ import { InitialValuesInterface } from '../App.js'
 interface SquareProps {
     handleLogin?: () => void
     inputValue: InitialValuesInterface
-    setInputValue: () => void
+    setInputValue: (newInputValue: InitialValuesInterface) => void
     errorMessage?: boolean
     setErrorMessage?: (value: boolean) => void
     isLoading?: boolean
