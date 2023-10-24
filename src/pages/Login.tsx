@@ -1,8 +1,21 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.jsx'
+import Square from '../components/Square.js'
 
 import ConjugEasyLogo from '../assets/images/home/ConjugEasy.png'
+
+import { InitialValuesInterface } from '../App.js'
+
+interface LoginInterface {
+    inputValue: InitialValuesInterface
+    setInputValue: (value: any) => void
+    handleLogin: () => void
+    errorMessage: boolean
+    setErrorMessage: (value: boolean) => boolean
+    isLoading: boolean
+    setIsLoading: (value: boolean) => boolean
+}
 
 export default function Login({
     inputValue,
@@ -12,7 +25,7 @@ export default function Login({
     setErrorMessage,
     isLoading,
     setIsLoading,
-}) {
+}: LoginInterface) {
     return (
         <div className="login-container">
             <Link to="/">

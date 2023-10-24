@@ -1,21 +1,24 @@
 import { Link } from 'react-router-dom'
 
-import Button from '../components/Button.jsx'
+import Button from '../components/Button.js'
 
 import ConjugEasyBlackBelt from '../assets/images/belts/ConjugEasy_BlackBelt.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 import ConjugEasyPen from '../assets/images/logo/ConjugEasy_Pen.png'
 import ConjugEasyLogout from '../assets/images/logo/ConjugEasy_Logout.png'
 
-export default function Teacher({ handleLogout }) {
-    const textButton = [
+import { UserInterface } from './PersonalSpace.js'
+
+export default function Teacher({ handleLogout }: UserInterface) {
+    const textButton: string[] = [
         "J'ajoute des exercices",
         'Résultats élèves',
         'Je modifie un exercice',
         'Se déconnecter',
     ]
 
-    const userSurname = localStorage.getItem('user-surname')
+    const userSurname: string | null = localStorage.getItem('user-surname')
+
     return (
         <div className="personal-space-container">
             <p>

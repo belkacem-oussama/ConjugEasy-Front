@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import Button from '../components/Button.jsx'
+import Button from '../components/Button.js'
 
 //IMPORT PICS
 import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
@@ -16,12 +16,14 @@ import ConjugEasyPurpleBelt from '../assets/images/belts/ConjugEasy_PurpleBelt.p
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png'
 
-export default function Student({ handleLogout }) {
-    const [passedExercices, setPassedExercices] = useState(0)
-    const [readyToExam, setReadyToExam] = useState(false)
-    const [currentBelt, setCurrentBelt] = useState('WhiteBelt')
+import { UserInterface } from './PersonalSpace.js'
 
-    const textButton = [
+export default function Student({ handleLogout }: UserInterface) {
+    const [passedExercices, setPassedExercices] = useState<number>(0)
+    const [readyToExam, setReadyToExam] = useState<boolean>(false)
+    const [currentBelt, setCurrentBelt] = useState<string>('WhiteBelt')
+
+    const textButton: string[] = [
         'Je passe la ceinture noire',
         "Je m'entraîne",
         'Je consulte mes résultats',
@@ -29,7 +31,7 @@ export default function Student({ handleLogout }) {
         'Se déconnecter',
     ]
 
-    const beltOrder = {
+    const beltOrder: { [key: number]: string } = {
         1: 'White',
         2: 'Blue',
         3: 'Purple',
@@ -37,7 +39,7 @@ export default function Student({ handleLogout }) {
         5: 'Black',
     }
 
-    let beltToDisplay = ''
+    let beltToDisplay: string = ''
 
     switch (currentBelt) {
         case 'WhiteBelt':
@@ -59,8 +61,8 @@ export default function Student({ handleLogout }) {
             break
     }
 
-    const userName = localStorage.getItem('user-name')
-    const userSurname = localStorage.getItem('user-surname')
+    const userName: string | null = localStorage.getItem('user-name')
+    const userSurname: string | null = localStorage.getItem('user-surname')
 
     return (
         <div className="personal-space-container">

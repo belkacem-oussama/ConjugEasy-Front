@@ -4,12 +4,22 @@ import Input from './Input.jsx'
 import Button from './Button.jsx'
 import Text from './Text.jsx'
 
-import text from '../assets/json/text.json'
-
 import ConjugEasyLogo from '../assets/images/logo/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 
 import LoaderComponent from './Loader.jsx'
+
+import { InitialValuesInterface } from '../App.js'
+
+interface SquareProps {
+    handleLogin?: () => void
+    inputValue: InitialValuesInterface
+    setInputValue: (newInputValue: InitialValuesInterface) => void
+    errorMessage?: boolean
+    setErrorMessage?: (value: boolean) => void
+    setIsLoading: (value: boolean) => boolean
+    isLoading?: boolean
+}
 
 export default function Square({
     handleLogin,
@@ -17,30 +27,35 @@ export default function Square({
     setInputValue,
     errorMessage,
     setErrorMessage,
+    setIsLoading,
     isLoading,
-}) {
+}: SquareProps) {
     const location = useLocation()
-    const goodScore = parseInt(localStorage.getItem('positive-counter'))
-
+    const storageScore: string | null = localStorage.getItem('positive-counter')
+    let goodScore: number = 0
     let textToDisplay
 
-    switch (goodScore) {
-        case 5:
-        case 4:
-            textToDisplay = 'Bravo ! Très bonne note, continue ainsi !'
-            break
-        case 3:
-            textToDisplay =
-                'Continue, ne lâche pas tes efforts, tu es sur la bonne voie !'
-            break
-        case 2:
-        case 1:
-            textToDisplay = 'Il faut réviser, allez, au boulot !'
-            break
-        case 0:
-            textToDisplay = 'Houston, on a un problème...'
-            break
-        default:
+    if (storageScore !== null) {
+        goodScore = parseInt(storageScore)
+
+        switch (goodScore) {
+            case 5:
+            case 4:
+                textToDisplay = 'Bravo ! Très bonne note, continue ainsi !'
+                break
+            case 3:
+                textToDisplay =
+                    'Continue, ne lâche pas tes efforts, tu es sur la bonne voie !'
+                break
+            case 2:
+            case 1:
+                textToDisplay = 'Il faut réviser, allez, au boulot !'
+                break
+            case 0:
+                textToDisplay = 'Houston, on a un problème...'
+                break
+            default:
+        }
     }
 
     return (
@@ -66,7 +81,7 @@ export default function Square({
                         setErrorMessage={setErrorMessage}
                     />
                     {isLoading ? (
-                        <LoaderComponent />
+                        <LoaderComponent type="pacman" active />
                     ) : (
                         <Button
                             color="secondary"
