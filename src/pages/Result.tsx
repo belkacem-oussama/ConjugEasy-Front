@@ -9,16 +9,16 @@ import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 
 export default function Result() {
-    const [readyForTest, setReadyForTest] = useState(false)
+    const [readyForTest, setReadyForTest] = useState<boolean>(false)
 
-    const textButton = [
+    const textButton: string[] = [
         "Je m'exerce",
         'Je consulte mes résultats',
         "Retour à l'espace perso",
         'Passer la ceinture noire',
     ]
 
-    const handleRemoveCounter = () => {
+    const handleRemoveCounter: () => void = () => {
         localStorage.removeItem('positive-counter')
     }
 
