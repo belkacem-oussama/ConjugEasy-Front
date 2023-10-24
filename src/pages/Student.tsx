@@ -64,6 +64,7 @@ export default function Student({ handleLogout }: UserInterface) {
     const userName: string | null = localStorage.getItem('user-name')
     const userSurname: string | null = localStorage.getItem('user-surname')
 
+    localStorage.setItem('current-belt', currentBelt)
     return (
         <div className="personal-space-container">
             <p>
