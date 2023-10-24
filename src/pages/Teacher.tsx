@@ -7,9 +7,7 @@ import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 import ConjugEasyPen from '../assets/images/logo/ConjugEasy_Pen.png'
 import ConjugEasyLogout from '../assets/images/logo/ConjugEasy_Logout.png'
 
-export interface UserInterface {
-    handleLogout: () => void
-}
+import { UserInterface } from './PersonalSpace.js'
 
 export default function Teacher({ handleLogout }: UserInterface) {
     const textButton: string[] = [

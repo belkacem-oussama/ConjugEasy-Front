@@ -16,7 +16,7 @@ import ConjugEasyPurpleBelt from '../assets/images/belts/ConjugEasy_PurpleBelt.p
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 import ConjugEasyWhiteBelt from '../assets/images/belts/ConjugEasy_WhiteBelt.png'
 
-import { UserInterface } from './Teacher.js'
+import { UserInterface } from './PersonalSpace.js'
 
 export default function Student({ handleLogout }: UserInterface) {
     const [passedExercices, setPassedExercices] = useState<number>(0)
