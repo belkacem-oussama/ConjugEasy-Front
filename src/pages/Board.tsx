@@ -7,7 +7,14 @@ import Button from '../components/Button.js'
 
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 
-export default function Board() {
+import { InitialValuesInterface } from '../App.js'
+
+interface BoardInterface {
+    inputValue: InitialValuesInterface
+    setInputValue: (newInputValue: InitialValuesInterface) => void
+}
+
+export default function Board({ inputValue, setInputValue }: BoardInterface) {
     return (
         <div className="board-page">
             <div className="board-page-container-c">
@@ -20,7 +27,10 @@ export default function Board() {
             </div>
             <div className="board-page-container-sb">
                 <div className="board-page-squares">
-                    <Square />
+                    <Square
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
                 <div className="board-page-button">
                     <Link to="/personal">

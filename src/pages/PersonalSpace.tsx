@@ -1,9 +1,11 @@
+import React from 'react'
+
 import Student from './Student.jsx'
 import Teacher from './Teacher.jsx'
 
 export interface UserInterface {
     handleLogout: () => void
-    setIsLogged: () => void
+    setIsLogged: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function PersonalSpace({

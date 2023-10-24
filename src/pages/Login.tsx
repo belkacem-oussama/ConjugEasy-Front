@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Square from '../components/Square.js'
@@ -12,9 +11,9 @@ interface LoginInterface {
     setInputValue: (value: any) => void
     handleLogin: () => void
     errorMessage: boolean
-    setErrorMessage: (value: boolean) => boolean
+    setErrorMessage: (value: boolean) => void
     isLoading: boolean
-    setIsLoading: (value: boolean) => boolean
+    setIsLoading: (value: boolean) => void
 }
 
 export default function Login({
