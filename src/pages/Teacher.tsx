@@ -7,15 +7,20 @@ import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 import ConjugEasyPen from '../assets/images/logo/ConjugEasy_Pen.png'
 import ConjugEasyLogout from '../assets/images/logo/ConjugEasy_Logout.png'
 
-export default function Teacher({ handleLogout }) {
-    const textButton = [
+interface TeacherInterface {
+    handleLogout: () => void
+}
+
+export default function Teacher({ handleLogout }: TeacherInterface) {
+    const textButton: string[] = [
         "J'ajoute des exercices",
         'Résultats élèves',
         'Je modifie un exercice',
         'Se déconnecter',
     ]
 
-    const userSurname = localStorage.getItem('user-surname')
+    const userSurname: string | null = localStorage.getItem('user-surname')
+
     return (
         <div className="personal-space-container">
             <p>
