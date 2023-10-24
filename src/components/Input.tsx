@@ -8,12 +8,12 @@ import { InitialValuesInterface } from '../App.js'
 
 interface InputProps {
     inputValue: InitialValuesInterface
-    setInputValue: void
-    isPassword: boolean
-    placeholderValue: string
-    errorMessage: string
+    setInputValue: (value: any) => void
+    errorMessage: boolean
     setErrorMessage: (value: boolean) => void
-    index: number
+    isPassword?: boolean
+    placeholderValue?: string
+    index?: number
 }
 
 export default function Input({
@@ -44,12 +44,12 @@ export default function Input({
         switch (location.pathname) {
             case '/login':
                 if (isPassword) {
-                    setInputValue((prevInputValue) => ({
+                    setInputValue((prevInputValue: any) => ({
                         ...prevInputValue,
                         Password: value,
                     }))
                 } else {
-                    setInputValue((prevInputValue) => ({
+                    setInputValue((prevInputValue: any) => ({
                         ...prevInputValue,
                         Username: value,
                     }))
@@ -61,7 +61,7 @@ export default function Input({
                 const inputValueIndex = verbes.indexOf(placeholderInput)
 
                 if (inputValueIndex !== -1) {
-                    setInputValue((prevInputValue) => {
+                    setInputValue((prevInputValue: { Answers: any }) => {
                         const updatedAnswers = [...prevInputValue.Answers]
                         updatedAnswers[inputValueIndex] = e.target.value
                         return {
