@@ -1,8 +1,9 @@
 import React from 'react'
 import Loader from 'react-loaders'
+import { LoaderType } from 'react-loaders'
 
 interface LoaderComponentProps {
-    type: string
+    type: LoaderType
     active: boolean
 }
 
@@ -12,7 +13,7 @@ export default function LoaderComponent({
 }: LoaderComponentProps) {
     return (
         <>
-            <Loader type="pacman" active />
+            <Loader type={type} active={active} />
         </>
     )
 }
