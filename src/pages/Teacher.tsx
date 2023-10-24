@@ -7,11 +7,11 @@ import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 import ConjugEasyPen from '../assets/images/logo/ConjugEasy_Pen.png'
 import ConjugEasyLogout from '../assets/images/logo/ConjugEasy_Logout.png'
 
-interface TeacherInterface {
+export interface UserInterface {
     handleLogout: () => void
 }
 
-export default function Teacher({ handleLogout }: TeacherInterface) {
+export default function Teacher({ handleLogout }: UserInterface) {
     const textButton: string[] = [
         "J'ajoute des exercices",
         'Résultats élèves',
