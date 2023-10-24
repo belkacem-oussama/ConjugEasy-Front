@@ -5,8 +5,12 @@ import Button from '../components/Button.js'
 import ConjugEasyTitle from '.././assets/images/home/ConjugEasy.png'
 import ConjugEasyCahier from '.././assets/images/home/ConjugEasy_Cahier.png'
 
-export default function Home({ handleLogout }) {
-    const ButtonsText = [
+interface HomeInterface {
+    handleLogout: () => void
+}
+
+export default function Home({ handleLogout }: HomeInterface) {
+    const ButtonsText: string[] = [
         'Élève',
         'Professeur',
         'Visiteur',
@@ -14,7 +18,7 @@ export default function Home({ handleLogout }) {
         'Se déconnecter',
     ]
 
-    const isLogged = localStorage.getItem('isLogged')
+    const isLogged: string | null = localStorage.getItem('isLogged')
 
     return (
         <div className="home">
