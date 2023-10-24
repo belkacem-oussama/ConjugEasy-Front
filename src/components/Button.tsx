@@ -6,7 +6,7 @@ interface ButtonProps {
     size?: 'small'
     img?: string
     error?: boolean
-    onClick: () => void
+    onClick?: () => void
 }
 
 export default function Button({
