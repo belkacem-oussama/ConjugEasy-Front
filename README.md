@@ -6,7 +6,7 @@ Projet réalisé au profit d'une enseignante pour lui faciliter le passage des c
 
 Dans un répertoire de votre choix lancez la commande :
 
--   `git clone git@github.com:belkacem-oussama/ConjugEasy-Front.git`
+-   `git clone [ssh-link]`
 
 Lancez ensuite les commandes suivantes à la racine du projet :
 
