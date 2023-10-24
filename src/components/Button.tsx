@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 
 interface ButtonProps {
     color: 'primary' | 'secondary'
+    className?: string
     text: string
     size?: 'small'
     img?: string
