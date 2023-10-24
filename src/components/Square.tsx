@@ -12,12 +12,12 @@ import LoaderComponent from './Loader.jsx'
 import { InitialValuesInterface } from '../App.js'
 
 interface SquareProps {
-    handleLogin: () => void
+    handleLogin?: () => void
     inputValue: InitialValuesInterface
     setInputValue: () => void
-    errorMessage: boolean
-    setErrorMessage: (value: boolean) => void
-    isLoading: boolean
+    errorMessage?: boolean
+    setErrorMessage?: (value: boolean) => void
+    isLoading?: boolean
 }
 
 export default function Square({
