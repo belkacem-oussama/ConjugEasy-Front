@@ -203,8 +203,24 @@ export default function App() {
                         />
                     }
                 />
-                <Route path="/result" element={<Result />} />
-                <Route path="/board" element={<Board />} />
+                <Route
+                    path="/result"
+                    element={
+                        <Result
+                            inputValue={inputValue}
+                            setInputValue={setInputValue}
+                        />
+                    }
+                />
+                <Route
+                    path="/board"
+                    element={
+                        <Board
+                            inputValue={inputValue}
+                            setInputValue={setInputValue}
+                        />
+                    }
+                />
                 <Route path="/bye-bye" element={<Bye />} />
             </Routes>
             <Footer />
