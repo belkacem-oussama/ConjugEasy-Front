@@ -20,7 +20,7 @@ export default function Button({
     const location = useLocation()
 
     const getButtonStyle = () => {
-        let styles = 'size_button '
+        let styles: string = 'size_button '
 
         switch (color) {
             case 'primary':
