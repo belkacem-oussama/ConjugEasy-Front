@@ -38,7 +38,10 @@ export default function Input({
     }
 
     const HandleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        errorMessage ? setErrorMessage(false) : null
+        if (errorMessage && setErrorMessage) {
+            setErrorMessage(false)
+        }
+
         const { value } = e.target
 
         switch (location.pathname) {
