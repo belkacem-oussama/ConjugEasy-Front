@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Student from './Student.jsx'
 import Teacher from './Teacher.jsx'
 
@@ -6,6 +7,18 @@ export interface UserInterface {
     setIsLogged: () => void
 }
 
+=======
+import React from 'react'
+
+import Student from './Student.jsx'
+import Teacher from './Teacher.jsx'
+
+export interface UserInterface {
+    handleLogout: () => void
+    setIsLogged: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+>>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
 export default function PersonalSpace({
     handleLogout,
     setIsLogged,

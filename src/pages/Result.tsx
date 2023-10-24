@@ -7,8 +7,18 @@ import Square from '../components/Square.js'
 import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
+<<<<<<< HEAD
+=======
 
-export default function Result() {
+import { InitialValuesInterface } from '../App.js'
+>>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
+
+interface ResultInterface {
+    inputValue: InitialValuesInterface
+    setInputValue: (newInputValue: InitialValuesInterface) => void
+}
+
+export default function Result({ inputValue, setInputValue }: ResultInterface) {
     const [readyForTest, setReadyForTest] = useState<boolean>(false)
 
     const textButton: string[] = [
@@ -26,7 +36,10 @@ export default function Result() {
         <div className="result">
             <div className="result-container">
                 <div className="result-container-page">
-                    <Square />
+                    <Square
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
                 <div className="result-container-button">
                     <div className="result-container-button-top">

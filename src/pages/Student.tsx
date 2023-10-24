@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
+=======
+import { useState } from 'react'
+>>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
 import { Link } from 'react-router-dom'
 
 import Button from '../components/Button.js'
@@ -64,6 +68,10 @@ export default function Student({ handleLogout }: UserInterface) {
     const userName: string | null = localStorage.getItem('user-name')
     const userSurname: string | null = localStorage.getItem('user-surname')
 
+<<<<<<< HEAD
+=======
+    localStorage.setItem('current-belt', currentBelt)
+>>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
     return (
         <div className="personal-space-container">
             <p>

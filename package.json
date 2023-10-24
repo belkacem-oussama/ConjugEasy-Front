@@ -24,6 +24,10 @@
   },
   "devDependencies": {
     "@types/react": "^18.2.31",
+<<<<<<< HEAD
+=======
+    "@types/react-dom": "^18.2.14",
+>>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
