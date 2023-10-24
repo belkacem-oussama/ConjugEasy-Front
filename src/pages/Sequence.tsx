@@ -7,7 +7,7 @@ import { InitialValuesInterface } from '../App.js'
 
 interface SequenceInterface {
     inputValue: InitialValuesInterface
-    setInputValue: () => void
+    setInputValue: (newInputValue: InitialValuesInterface) => void
     handleFormSubmit: () => void
 }
 
