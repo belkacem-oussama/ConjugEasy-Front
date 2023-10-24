@@ -7,11 +7,8 @@ import Square from '../components/Square.js'
 import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
-<<<<<<< HEAD
-=======
 
 import { InitialValuesInterface } from '../App.js'
->>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
 
 interface ResultInterface {
     inputValue: InitialValuesInterface

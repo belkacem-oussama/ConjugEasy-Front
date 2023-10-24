@@ -12,15 +12,9 @@ interface LoginInterface {
     setInputValue: (value: any) => void
     handleLogin: () => void
     errorMessage: boolean
-<<<<<<< HEAD
-    setErrorMessage: (value: boolean) => boolean
-    isLoading: boolean
-    setIsLoading: (value: boolean) => boolean
-=======
     setErrorMessage: (value: boolean) => void
     isLoading: boolean
     setIsLoading: (value: boolean) => void
->>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
 }
 
 export default function Login({

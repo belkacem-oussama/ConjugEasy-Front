@@ -17,11 +17,7 @@ interface SquareProps {
     setInputValue: (newInputValue: InitialValuesInterface) => void
     errorMessage?: boolean
     setErrorMessage?: (value: boolean) => void
-<<<<<<< HEAD
-    setIsLoading: (value: boolean) => boolean
-=======
     setIsLoading?: (value: boolean) => void
->>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
     isLoading?: boolean
 }
 

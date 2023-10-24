@@ -203,10 +203,6 @@ export default function App() {
                         />
                     }
                 />
-<<<<<<< HEAD
-                <Route path="/result" element={<Result />} />
-                <Route path="/board" element={<Board />} />
-=======
                 <Route
                     path="/result"
                     element={
@@ -225,7 +221,6 @@ export default function App() {
                         />
                     }
                 />
->>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
                 <Route path="/bye-bye" element={<Bye />} />
             </Routes>
             <Footer />

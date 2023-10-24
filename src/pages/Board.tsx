@@ -6,11 +6,8 @@ import DoughnutChart from '../components/Doughnut.js'
 import Button from '../components/Button.js'
 
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
-<<<<<<< HEAD
-=======
 
 import { InitialValuesInterface } from '../App.js'
->>>>>>> 020df8bfb795d219569ecf11bed945ba7cdc1190
 
 interface BoardInterface {
     inputValue: InitialValuesInterface
