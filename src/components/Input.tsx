@@ -9,8 +9,8 @@ import { InitialValuesInterface } from '../App.js'
 interface InputProps {
     inputValue: InitialValuesInterface
     setInputValue: (value: any) => void
-    errorMessage: boolean
-    setErrorMessage: (value: boolean) => void
+    errorMessage?: boolean
+    setErrorMessage?: (value: boolean) => void
     isPassword?: boolean
     placeholderValue?: string
     index?: number
