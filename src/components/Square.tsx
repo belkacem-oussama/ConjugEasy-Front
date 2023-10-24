@@ -17,6 +17,7 @@ interface SquareProps {
     setInputValue: (newInputValue: InitialValuesInterface) => void
     errorMessage?: boolean
     setErrorMessage?: (value: boolean) => void
+    setIsLoading: (value: boolean) => boolean
     isLoading?: boolean
 }
 
@@ -26,6 +27,7 @@ export default function Square({
     setInputValue,
     errorMessage,
     setErrorMessage,
+    setIsLoading,
     isLoading,
 }: SquareProps) {
     const location = useLocation()
