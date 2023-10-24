@@ -7,6 +7,8 @@ import Text from './Text.jsx'
 import ConjugEasyLogo from '../assets/images/logo/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 
+import '../assets/styles/components/square.scss'
+
 import LoaderComponent from './Loader.jsx'
 
 import { InitialValuesInterface } from '../App.js'
