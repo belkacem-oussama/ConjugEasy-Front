@@ -4,10 +4,10 @@ import { useLocation } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
 
-import { InitialValuesInterface } from '../App.js'
+import { InputValue } from '../App.js'
 
 interface InputProps {
-    inputValue: InitialValuesInterface
+    inputValue: InputValue
     setInputValue: (value: any) => void
     errorMessage?: boolean
     setErrorMessage?: (value: boolean) => void

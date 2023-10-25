@@ -3,12 +3,12 @@ import Input from './Input.jsx'
 import text from '../assets/json/text.json'
 import goodConjug from '../assets/json/text.json'
 
-import { InitialValuesInterface } from '../App.js'
+import { InputValue } from '../App.js'
 
 //START INTERFACE TS
 interface TextInterface {
-    inputValue: InitialValuesInterface
-    setInputValue: (newInputValue: InitialValuesInterface) => void
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
 }
 
 //END INTERFACE TS

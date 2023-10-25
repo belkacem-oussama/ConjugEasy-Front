@@ -9,12 +9,12 @@ import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
 
 import LoaderComponent from './Loader.jsx'
 
-import { InitialValuesInterface } from '../App.js'
+import { InputValue } from '../App.js'
 
 interface SquareProps {
     handleLogin?: () => void
-    inputValue: InitialValuesInterface
-    setInputValue: (newInputValue: InitialValuesInterface) => void
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
     errorMessage?: boolean
     setErrorMessage?: (value: boolean) => void
     setIsLoading?: (value: boolean) => void

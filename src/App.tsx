@@ -17,8 +17,8 @@ import users from './assets/json/user.json'
 
 import './assets/styles/import.scss'
 
-//TS Interface
-export interface InitialValuesInterface {
+//TS Interface && Type
+export type InputValue = {
     Username: string
     Password: string
     Answers: string[]
@@ -36,14 +36,13 @@ interface LoggedUserInterface {
 //END Interface
 
 export default function App() {
-    const initialValues: InitialValuesInterface = {
+    const initialValues: InputValue = {
         Username: '',
         Password: '',
         Answers: ['', '', '', '', ''],
     }
 
-    const [inputValue, setInputValue] =
-        useState<InitialValuesInterface>(initialValues)
+    const [inputValue, setInputValue] = useState<InputValue>(initialValues)
 
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [errorMessage, setErrorMessage] = useState<boolean>(false)

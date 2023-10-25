@@ -5,10 +5,10 @@ import Square from '../components/Square.js'
 
 import ConjugEasyLogo from '../assets/images/home/ConjugEasy.png'
 
-import { InitialValuesInterface } from '../App.js'
+import { InputValue } from '../App.js'
 
 interface LoginInterface {
-    inputValue: InitialValuesInterface
+    inputValue: InputValue
     setInputValue: (value: any) => void
     handleLogin: () => void
     errorMessage: boolean

@@ -8,11 +8,11 @@ import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 
-import { InitialValuesInterface } from '../App.js'
+import { InputValue } from '../App.js'
 
 interface ResultInterface {
-    inputValue: InitialValuesInterface
-    setInputValue: (newInputValue: InitialValuesInterface) => void
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
 }
 
 export default function Result({ inputValue, setInputValue }: ResultInterface) {

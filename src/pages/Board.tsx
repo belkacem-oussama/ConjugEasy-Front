@@ -7,11 +7,11 @@ import Button from '../components/Button.js'
 
 import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 
-import { InitialValuesInterface } from '../App.js'
+import { InputValue } from '../App.js'
 
 interface BoardInterface {
-    inputValue: InitialValuesInterface
-    setInputValue: (newInputValue: InitialValuesInterface) => void
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
 }
 
 export default function Board({ inputValue, setInputValue }: BoardInterface) {
