@@ -1,19 +1,27 @@
 import { useLocation } from 'react-router-dom'
 
-import '../assets/styles/components/button.scss'
-import '../assets/styles/images/logo.scss'
-
-type Props = React.ComponentProps<'button'> & {
+interface ButtonProps {
     color: 'primary' | 'secondary'
-    text?: string
-    size?: string
+    className?: string
+    text: string
+    size?: 'small'
     img?: string
+    error?: boolean
+    onClick?: () => void
 }
 
-const Button: React.FC<Props> = ({ color, text, size, img }) => {
+export default function Button({
+    color,
+    text,
+    size,
+    img,
+    error,
+    onClick,
+}: ButtonProps) {
     const location = useLocation()
+
     const getButtonStyle = () => {
-        let styles = 'size_button '
+        let styles: string = 'size_button '
 
         switch (color) {
             case 'primary':
@@ -34,21 +42,30 @@ const Button: React.FC<Props> = ({ color, text, size, img }) => {
                 break
         }
 
-        location.pathname === '/result' ||
-        location.pathname === '/board' ||
-        location.pathname === '/personal'
-            ? (styles += 'button-result')
-            : ''
+        if (error) {
+            styles += 'shake-horizontal'
+        }
+
+        if (
+            location.pathname === '/result' ||
+            location.pathname === '/board' ||
+            location.pathname === '/personal' ||
+            location.pathname === '/bye-bye'
+        ) {
+            styles += 'button-result'
+        }
 
         return styles
     }
 
     return (
-        <button className={`${getButtonStyle()}`} id="button-component">
+        <button
+            className={getButtonStyle()}
+            id="button-component"
+            onClick={onClick}
+        >
             {text}
-            {img ? <img src={img} id="logo"></img> : ''}
+            {img ? <img src={img} id="logo" alt="Button Image" /> : ''}
         </button>
     )
 }
-
-export default Button

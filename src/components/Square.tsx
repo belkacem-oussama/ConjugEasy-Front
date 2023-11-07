@@ -1,16 +1,63 @@
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-import Input from './Input.tsx'
-import Button from './Button.tsx'
-import Text from './Text.tsx'
+import Input from './Input.jsx'
+import Button from './Button.jsx'
+import Text from './Text.jsx'
 
-import ConjugEasyLogo from '../assets/images/ConjugEasy-Login.png'
+import ConjugEasyLogo from '../assets/images/logo/ConjugEasy-Login.png'
 import ConjugEasyBlueBelt from '../assets/images/belts/ConjugEasy_BlueBelt.png'
-import '../assets/styles/components/square.scss'
-import text from '../assets/json/text.json'
 
-export default function Square() {
+import LoaderComponent from './Loader.jsx'
+
+import { InputValue } from '../App.js'
+
+interface SquareProps {
+    handleLogin?: () => void
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
+    errorMessage?: boolean
+    setErrorMessage?: (value: boolean) => void
+    setIsLoading?: (value: boolean) => void
+    isLoading?: boolean
+}
+
+export default function Square({
+    handleLogin,
+    inputValue,
+    setInputValue,
+    errorMessage,
+    setErrorMessage,
+    setIsLoading,
+    isLoading,
+}: SquareProps) {
     const location = useLocation()
+    const storageScore: string | null = localStorage.getItem('positive-counter')
+    let goodScore: number = 0
+    let textToDisplay
+
+    if (storageScore !== null) {
+        goodScore = parseInt(storageScore)
+
+        switch (goodScore) {
+            case 5:
+            case 4:
+                textToDisplay = 'Bravo ! Très bonne note, continue ainsi !'
+                break
+            case 3:
+                textToDisplay =
+                    'Continue, ne lâche pas tes efforts, tu es sur la bonne voie !'
+                break
+            case 2:
+            case 1:
+                textToDisplay = 'Il faut réviser, allez, au boulot !'
+                break
+            case 0:
+                textToDisplay = 'Houston, on a un problème...'
+                break
+            default:
+        }
+    }
+
     return (
         <>
             {location.pathname === '/login' ? (
@@ -20,22 +67,40 @@ export default function Square() {
                         id="login-logo"
                         alt="ConjugEasy Logo"
                     />
-                    <Input />
-                    <Input isPassword />
-                    <Link to="/personal">
+                    <Input
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                        errorMessage={errorMessage}
+                        setErrorMessage={setErrorMessage}
+                    />
+                    <Input
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                        isPassword
+                        errorMessage={errorMessage}
+                        setErrorMessage={setErrorMessage}
+                    />
+                    {isLoading ? (
+                        <LoaderComponent type="pacman" active />
+                    ) : (
                         <Button
                             color="secondary"
-                            text="Connexion"
+                            text={errorMessage ? 'Oups...' : 'Connexion'}
                             size="small"
+                            onClick={handleLogin}
+                            error={errorMessage}
                         />
-                    </Link>
+                    )}
                 </div>
             ) : (
                 ''
             )}
             {location.pathname === '/sequence' ? (
                 <div className="square-tablet-sequence">
-                    <Text />
+                    <Text
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
             ) : (
                 ''
@@ -43,8 +108,12 @@ export default function Square() {
             {location.pathname === '/result' ? (
                 <div className="square-tablet-result">
                     <h1>Score :</h1>
-                    <h2>3/5</h2>
-                    <p>{text.score}</p>
+                    {goodScore === null || isNaN(goodScore) ? (
+                        <h2>Oups...une erreur est survenue</h2>
+                    ) : (
+                        <h2>{goodScore}/5</h2>
+                    )}
+                    <p>{textToDisplay}</p>
                 </div>
             ) : (
                 ''

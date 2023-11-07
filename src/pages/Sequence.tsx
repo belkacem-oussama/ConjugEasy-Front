@@ -1,18 +1,32 @@
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.tsx'
-import Button from '../components/Button.tsx'
+import Square from '../components/Square.js'
+import Button from '../components/Button.js'
 
-import '../assets/styles/pages/sequence.scss'
+import { InputValue } from '../App.js'
 
-export default function Sequence() {
+interface SequenceInterface {
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
+    handleFormSubmit: () => void
+}
+
+export default function Sequence({
+    inputValue,
+    setInputValue,
+    handleFormSubmit,
+}: SequenceInterface) {
     return (
         <div className="sequence-container">
             <div className="sequence-container-page">
-                <Square />
+                <Square inputValue={inputValue} setInputValue={setInputValue} />
             </div>
             <Link to="/result">
-                <Button color="primary" text="J'ai fini !" />
+                <Button
+                    color="primary"
+                    text="J'ai fini !"
+                    onClick={handleFormSubmit}
+                />
             </Link>
         </div>
     )

@@ -2,11 +2,19 @@
 
 //STYLE FOR LOGIN-PAGE
 .input-component-login {
-    border: none;
     background-color: white;
     padding: 10px;
     border-radius: $border-radius-input;
-    color: black;
+
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1440px) {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
 
     input {
         border: none;
@@ -30,6 +38,7 @@
         @media (max-width: 768px) {
             width: 60px;
         }
+
         @media (min-width: 769px) and (max-width: 1440px) {
             width: 70px;
         }

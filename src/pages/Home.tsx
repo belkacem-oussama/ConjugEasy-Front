@@ -1,20 +1,24 @@
 import { Link } from 'react-router-dom'
 
-import Button from '../components/Button.tsx'
+import Button from '../components/Button.js'
 
-import ConjugEasyTitle from '.././assets/images/ConjugEasy.png'
-import ConjugEasyCahier from '.././assets/images/ConjugEasy_Cahier.png'
+import ConjugEasyTitle from '.././assets/images/home/ConjugEasy.png'
+import ConjugEasyCahier from '.././assets/images/home/ConjugEasy_Cahier.png'
 
-import '.././assets/styles/pages/home.scss'
+interface HomeInterface {
+    handleLogout: () => void
+}
 
-export default function Home() {
-    const firstTwoButtonsText: string[] = ['Élève', 'Professeur']
-    const firstTwoButtons = firstTwoButtonsText.map((label, index) => (
-        <Button key={index} color="primary" text={label}></Button>
-    ))
+export default function Home({ handleLogout }: HomeInterface) {
+    const ButtonsText: string[] = [
+        'Élève',
+        'Professeur',
+        'Visiteur',
+        'Espace personel',
+        'Se déconnecter',
+    ]
 
-    const thirdButtonText = 'Visiteur'
-    const thirdButton = <Button color="primary" text={thirdButtonText}></Button>
+    const isLogged: string | null = localStorage.getItem('isLogged')
 
     return (
         <div className="home">
@@ -23,14 +27,42 @@ export default function Home() {
                 <div className="home-buttons-img-container">
                     <img src={ConjugEasyCahier} alt="ConjugEasy Notes" />
                 </div>
-                <div className="home-buttons-container">
-                    <Link to="/login">
-                        <div className="home-buttons-top">
-                            {firstTwoButtons}
+                {!isLogged ? (
+                    <div className="home-buttons-container">
+                        <Link to="/login">
+                            <div className="home-buttons-top">
+                                <Button
+                                    color="primary"
+                                    text={ButtonsText[0]}
+                                ></Button>
+                                <Button
+                                    color="primary"
+                                    text={ButtonsText[1]}
+                                ></Button>
+                            </div>
+                        </Link>
+                        <div className="home-buttons-bottom">
+                            <Button
+                                color="primary"
+                                text={ButtonsText[2]}
+                            ></Button>
                         </div>
-                    </Link>
-                    <div className="home-buttons-bottom">{thirdButton}</div>
-                </div>
+                    </div>
+                ) : (
+                    <>
+                        <Link to="/personal">
+                            <Button
+                                color="primary"
+                                text={ButtonsText[3]}
+                            ></Button>
+                        </Link>
+                        <Button
+                            color="primary"
+                            text={ButtonsText[4]}
+                            onClick={handleLogout}
+                        ></Button>
+                    </>
+                )}
             </div>
         </div>
     )

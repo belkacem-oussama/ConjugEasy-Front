@@ -1,16 +1,21 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
-import Button from '../components/Button.tsx'
-import Square from '../components/Square.tsx'
+import Button from '../components/Button.js'
+import Square from '../components/Square.js'
 
-import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
-import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
-import ConjugEasyResult from '../assets/images/ConjugEasy_Result.png'
+import ConjugEasyExercice from '../assets/images/logo/ConjugEasy_Exercices.png'
+import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
+import ConjugEasyResult from '../assets/images/logo/ConjugEasy_Result.png'
 
-import '../assets/styles/pages/result.scss'
+import { InputValue } from '../App.js'
 
-export default function Result() {
+interface ResultInterface {
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
+}
+
+export default function Result({ inputValue, setInputValue }: ResultInterface) {
     const [readyForTest, setReadyForTest] = useState<boolean>(false)
 
     const textButton: string[] = [
@@ -20,11 +25,18 @@ export default function Result() {
         'Passer la ceinture noire',
     ]
 
+    const handleRemoveCounter: () => void = () => {
+        localStorage.removeItem('positive-counter')
+    }
+
     return (
         <div className="result">
             <div className="result-container">
                 <div className="result-container-page">
-                    <Square />
+                    <Square
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
                 <div className="result-container-button">
                     <div className="result-container-button-top">
@@ -33,6 +45,7 @@ export default function Result() {
                                 color="primary"
                                 text={textButton[0]}
                                 img={ConjugEasyExercice}
+                                onClick={handleRemoveCounter}
                             />
                         </Link>
                         <Link to="/board">
@@ -40,6 +53,7 @@ export default function Result() {
                                 color="primary"
                                 text={textButton[1]}
                                 img={ConjugEasyResult}
+                                onClick={handleRemoveCounter}
                             />
                         </Link>
                     </div>
@@ -54,6 +68,7 @@ export default function Result() {
                                     color="primary"
                                     text={textButton[2]}
                                     img={ConjugEasyHome}
+                                    onClick={handleRemoveCounter}
                                 />
                             </Link>
                         )}

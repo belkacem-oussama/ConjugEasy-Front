@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "login": "teacher",
+        "mdp": "teacher",
+        "name": "teacher",
+        "surname": "teacher",
+        "role": "teacher"
+    },
+    {
+        "id": 2,
+        "login": "student",
+        "mdp": "student",
+        "name": "student",
+        "surname": "student",
+        "role": "student"
+    }
+]

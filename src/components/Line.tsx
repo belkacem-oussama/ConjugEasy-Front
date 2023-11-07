@@ -1,3 +1,6 @@
+import { Line } from 'react-chartjs-2'
+import React from 'react'
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -8,7 +11,6 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js'
-import { Line } from 'react-chartjs-2'
 
 ChartJS.register(
     CategoryScale,
@@ -20,16 +22,46 @@ ChartJS.register(
     Legend
 )
 
-export const options = {
+// TS Interface
+interface OptionsInterface {
+    responsive: boolean
+    plugins: {
+        legend: {
+            position: string
+        }
+    }
+}
+
+interface DataInterface {
+    labels: string[]
+    datasets: [
+        {
+            label: string
+            data: number[]
+            borderColor: string
+            backgroundColor: string
+        },
+        {
+            label: string
+            data: number[]
+            borderColor: string
+            backgroundColor: string
+        },
+    ]
+}
+
+//END INTERFACE
+
+export const options: OptionsInterface = {
     responsive: true,
     plugins: {
         legend: {
-            position: 'bottom' as const,
+            position: 'bottom',
         },
     },
 }
 
-const labels = [
+const labels: string[] = [
     'Septembre',
     'Octobre',
     'Novembre',
@@ -43,7 +75,7 @@ const labels = [
     'Juillet',
 ]
 
-export const data = {
+export const data: DataInterface = {
     labels,
     datasets: [
         {

@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import Button from '../components/Button.tsx'
-
-import '../assets/styles/pages/start.scss'
+import Button from '../components/Button.js'
 
 export default function Start() {
     return (

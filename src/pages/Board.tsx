@@ -1,16 +1,20 @@
 import { Link } from 'react-router-dom'
 
-import Square from '../components/Square.tsx'
-import LineChart from '../components/Line.tsx'
-import DoughnutChart from '../components/Doughnut.tsx'
-import Button from '../components/Button.tsx'
+import Square from '../components/Square.js'
+import LineChart from '../components/Line.js'
+import DoughnutChart from '../components/Doughnut.js'
+import Button from '../components/Button.js'
 
-import ConjugEasyHome from '../assets/images/ConjugEasy_Home.png'
-import ConjugEasyExercice from '../assets/images/ConjugEasy_Exercices.png'
+import ConjugEasyHome from '../assets/images/logo/ConjugEasy_Home.png'
 
-import '../assets/styles/pages/board.scss'
+import { InputValue } from '../App.js'
 
-export default function Board() {
+interface BoardInterface {
+    inputValue: InputValue
+    setInputValue: (newInputValue: InputValue) => void
+}
+
+export default function Board({ inputValue, setInputValue }: BoardInterface) {
     return (
         <div className="board-page">
             <div className="board-page-container-c">
@@ -23,7 +27,10 @@ export default function Board() {
             </div>
             <div className="board-page-container-sb">
                 <div className="board-page-squares">
-                    <Square />
+                    <Square
+                        inputValue={inputValue}
+                        setInputValue={setInputValue}
+                    />
                 </div>
                 <div className="board-page-button">
                     <Link to="/personal">

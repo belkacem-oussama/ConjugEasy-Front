@@ -3,14 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     @media (max-width: 768px) {
         height: 600px;
     }
+
     @media (min-width: 769px) and (max-width: 1440px) {
         height: 600px;
     }
-    @media (min-width: 1440px) {
-    }
+
     &-page {
         display: flex;
         justify-content: center;
@@ -20,6 +21,7 @@
             height: 300px;
             width: 700px;
         }
+
         @media (min-width: 1440px) {
             height: 300px;
             width: 700px;
