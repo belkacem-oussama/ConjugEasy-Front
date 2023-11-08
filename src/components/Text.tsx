@@ -9,11 +9,18 @@ import { InputValue } from '../App.js'
 interface TextInterface {
     inputValue: InputValue
     setInputValue: (newInputValue: InputValue) => void
+    inputIndex: number[]
+    setInputIndex: (inputIndex: number[]) => void
 }
 
 //END INTERFACE TS
 
-export default function Text({ inputValue, setInputValue }: TextInterface) {
+export default function Text({
+    inputValue,
+    setInputValue,
+    inputIndex,
+    setInputIndex,
+}: TextInterface) {
     //SET GOOD VERB'S CONJUG IN LS
     localStorage.setItem(
         'goodConjug',

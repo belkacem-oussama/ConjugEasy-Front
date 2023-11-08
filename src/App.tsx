@@ -14,6 +14,7 @@ import Bye from './pages/Bye.js'
 import Add from './pages/Add.js'
 
 import users from './assets/json/user.json'
+import text from './assets/json/text.json'
 
 import './assets/styles/import.scss'
 
@@ -47,6 +48,7 @@ export default function App() {
     const [isLogged, setIsLogged] = useState<boolean>(false)
     const [errorMessage, setErrorMessage] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [inputIndex, setInputIndex] = useState<number[]>([])
 
     const userRoles: string | null = localStorage.getItem('user-role')
     const logged: string | null = localStorage.getItem('isLogged')
@@ -130,6 +132,7 @@ export default function App() {
         let positiveCounter: number = 0
         let errorVerbsInput: string[] = []
         let errorVerbs: string[] = []
+        let verbsToFind: string[] = text.words
 
         for (let x = 0; x < StateInputValue.length; ++x) {
             if (StateInputValue[x] === GoodVerbs[x]) {
@@ -141,6 +144,7 @@ export default function App() {
         }
 
         localStorage.setItem('positive-counter', positiveCounter.toString())
+        console.log(errorVerbsInput, errorVerbs)
     }
 
     const handleFormSubmit = (): void => {
@@ -199,6 +203,8 @@ export default function App() {
                             inputValue={inputValue}
                             setInputValue={setInputValue}
                             handleFormSubmit={handleFormSubmit}
+                            inputIndex={inputIndex}
+                            setInputIndex={setInputIndex}
                         />
                     }
                 />
@@ -217,6 +223,8 @@ export default function App() {
                         <Board
                             inputValue={inputValue}
                             setInputValue={setInputValue}
+                            inputIndex={inputIndex}
+                            setInputIndex={setInputIndex}
                         />
                     }
                 />
