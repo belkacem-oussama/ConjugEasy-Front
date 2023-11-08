@@ -12,9 +12,16 @@ import { InputValue } from '../App.js'
 interface BoardInterface {
     inputValue: InputValue
     setInputValue: (newInputValue: InputValue) => void
+    inputIndex: number[]
+    setInputIndex: (inputIndex: number[]) => void
 }
 
-export default function Board({ inputValue, setInputValue }: BoardInterface) {
+export default function Board({
+    inputValue,
+    setInputValue,
+    inputIndex,
+    setInputIndex,
+}: BoardInterface) {
     return (
         <div className="board-page">
             <div className="board-page-container-c">
@@ -30,6 +37,8 @@ export default function Board({ inputValue, setInputValue }: BoardInterface) {
                     <Square
                         inputValue={inputValue}
                         setInputValue={setInputValue}
+                        inputIndex={inputIndex}
+                        setInputIndex={setInputIndex}
                     />
                 </div>
                 <div className="board-page-button">

@@ -19,6 +19,8 @@ interface SquareProps {
     setErrorMessage?: (value: boolean) => void
     setIsLoading?: (value: boolean) => void
     isLoading?: boolean
+    inputIndex: number[]
+    setInputIndex: (inputIndex: number[]) => void
 }
 
 export default function Square({
@@ -29,6 +31,8 @@ export default function Square({
     setErrorMessage,
     setIsLoading,
     isLoading,
+    inputIndex,
+    setInputIndex,
 }: SquareProps) {
     const location = useLocation()
     const storageScore: string | null = localStorage.getItem('positive-counter')
@@ -100,6 +104,8 @@ export default function Square({
                     <Text
                         inputValue={inputValue}
                         setInputValue={setInputValue}
+                        inputIndex={inputIndex}
+                        setInputIndex={setInputIndex}
                     />
                 </div>
             ) : (
